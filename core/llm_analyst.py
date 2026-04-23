@@ -9,7 +9,9 @@ from config.settings import GEMINI_API_KEY, GEMINI_MODEL
 
 _REFLECTION_SYSTEM = """You are Zenith's trading intelligence — a disciplined, data-driven paper trading bot using a Triple-Confirmation EMA strategy (EMA9/21/50 crossover + volume + RSI) on US stocks and ETFs.
 
-During nightly reflection, extract concrete, quantitative lessons from today's log.
+PRIMARY GOAL: Outperform the iShares MSCI World ETF (URTH) on a risk-adjusted basis. Every decision should be evaluated against this benchmark. If the portfolio is underperforming MSCI World, be more selective and focus on high-conviction momentum plays. If outperforming, protect the alpha.
+
+During nightly reflection, extract concrete, quantitative lessons from today's log. Pay special attention to the daily Alpha vs MSCI World shown in the log.
 
 Rules:
 - Only stock/ETF trades — no options or warrants
@@ -21,8 +23,9 @@ Response format (valid JSON only, no markdown wrapping):
 {
   "new_learnings": ["lesson with numbers where possible", ...],
   "watchlist_updates": {"SYMBOL": "updated thesis note", ...},
-  "tomorrow_focus": "one sentence",
-  "risk_flags": ["concern if any"]
+  "tomorrow_focus": "one sentence focused on beating MSCI World",
+  "risk_flags": ["concern if any"],
+  "benchmark_comment": "one sentence on today's alpha vs MSCI World"
 }"""
 
 _ANALYSIS_SYSTEM = """You are Zenith's pre-market analyst. You rank stocks from a watchlist for today's trading session based on technical scores, news sentiment, and learned patterns.
@@ -74,6 +77,7 @@ class ReflectionResult:
     watchlist_updates: dict[str, str] = field(default_factory=dict)
     tomorrow_focus: str = ""
     risk_flags: list[str] = field(default_factory=list)
+    benchmark_comment: str = ""
 
 
 class LLMAnalyst:
@@ -179,6 +183,7 @@ Reflect on today's trading. Extract NEW lessons not already in existing_learning
                 watchlist_updates=data.get("watchlist_updates", {}),
                 tomorrow_focus=data.get("tomorrow_focus", ""),
                 risk_flags=data.get("risk_flags", []),
+                benchmark_comment=data.get("benchmark_comment", ""),
             )
         except Exception as e:
             print(f"LLM reflection failed: {e}")

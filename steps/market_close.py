@@ -4,11 +4,23 @@ from __future__ import annotations
 import sys
 import traceback
 
+import yfinance as yf
+
 from core.alpaca_client import AlpacaClient
 from core.market_utils import should_skip_today
 from core.portfolio_manager import PortfolioManager
 from core.telegram_bot import TelegramNotifier
 from memory.log_manager import LogManager
+
+
+def _fetch_benchmark_return() -> float | None:
+    try:
+        hist = yf.Ticker("URTH").history(period="2d")
+        if len(hist) >= 2:
+            return float(hist["Close"].iloc[-1] / hist["Close"].iloc[-2] - 1)
+        return None
+    except Exception:
+        return None
 
 
 def run_market_close() -> None:
@@ -35,8 +47,21 @@ def run_market_close() -> None:
 
         cash_pct = state.cash / state.equity * 100 if state.equity else 0
 
+        benchmark_return = _fetch_benchmark_return()
+        portfolio_return = state.day_pnl_pct / 100
+
+        if benchmark_return is not None:
+            alpha = portfolio_return - benchmark_return
+            benchmark_line = (
+                f"**Benchmark (URTH/MSCI World):** {benchmark_return * 100:+.2f}% | "
+                f"**Alpha heute:** {alpha * 100:+.2f}%"
+            )
+        else:
+            benchmark_line = "**Benchmark (URTH):** nicht verfügbar"
+
         eod_lines = [
             f"**Portfolio:** {state.equity:,.2f}€ ({state.day_pnl_pct:+.2f}%)",
+            benchmark_line,
             f"**Cash:** {state.cash:,.2f}€ ({cash_pct:.1f}%)",
             f"**Offene Positionen:** {len(state.positions)}",
             f"**Trades heute:** {trade_count}/5",

@@ -39,6 +39,8 @@ def run_nightly_reflection() -> None:
 
         # Append reflection summary to daily log
         summary_lines = [f"**{len(result.new_learnings)} neue Lernerkenntnisse**"]
+        if result.benchmark_comment:
+            summary_lines.append(f"**MSCI World Vergleich:** {result.benchmark_comment}")
         if result.tomorrow_focus:
             summary_lines.append(f"**Morgen im Fokus:** {result.tomorrow_focus}")
         if result.risk_flags:
