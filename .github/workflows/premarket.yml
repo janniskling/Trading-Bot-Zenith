@@ -1,0 +1,44 @@
+name: Zenith – Pre-Market Research
+
+on:
+  schedule:
+    - cron: '0 11 * * 1-5'  # 11:00 UTC = 13:00 Berlin (Mo-Fr)
+  workflow_dispatch:          # Manual trigger for testing
+
+jobs:
+  premarket:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run Pre-Market Step
+        env:
+          ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
+          ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+          ALPACA_BASE_URL: ${{ secrets.ALPACA_BASE_URL }}
+          CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TRADING_START_DATE: ${{ secrets.TRADING_START_DATE }}
+        run: python main.py --step premarket
+
+      - name: Commit updated daily_log.md
+        run: |
+          git config user.name "Zenith Bot"
+          git config user.email "zenith-bot@users.noreply.github.com"
+          git add knowledge/daily_log.md
+          git diff --staged --quiet || (git pull --rebase && git commit -m "chore: premarket log $(date -u +%Y-%m-%d) [skip ci]" && git push)

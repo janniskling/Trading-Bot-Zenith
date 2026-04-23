@@ -1,0 +1,44 @@
+name: Zenith – Nightly Reflection
+
+on:
+  schedule:
+    - cron: '0 21 * * 1-5'  # 21:00 UTC = 23:00 Berlin (Mo-Fr)
+  workflow_dispatch:
+
+jobs:
+  nightly-reflection:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run Nightly Reflection Step
+        env:
+          ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
+          ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+          ALPACA_BASE_URL: ${{ secrets.ALPACA_BASE_URL }}
+          CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TRADING_START_DATE: ${{ secrets.TRADING_START_DATE }}
+        run: python main.py --step nightly_reflection
+
+      - name: Commit updated learnings and watchlist
+        run: |
+          git config user.name "Zenith Bot"
+          git config user.email "zenith-bot@users.noreply.github.com"
+          git add knowledge/learnings.md knowledge/watchlist.md knowledge/daily_log.md
+          git diff --staged --quiet || (git pull --rebase && git commit -m "chore: nightly reflection $(date -u +%Y-%m-%d) [skip ci]" && git push)
