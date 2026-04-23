@@ -62,7 +62,7 @@ def run_premarket() -> None:
         underdeployed = portfolio.is_underdeployed(state)
 
         # LLM analysis
-        candidates = analyst.analyze_trade_candidates(
+        candidates, discoveries = analyst.analyze_trade_candidates(
             watchlist_content=watchlist_text,
             learnings_content=learnings,
             news_summary=news_text,
@@ -70,14 +70,27 @@ def run_premarket() -> None:
             is_underdeployed=underdeployed,
         )
 
+        # Add new discoveries to watchlist
+        added_symbols = []
+        for disc in discoveries:
+            added = log.add_symbol_to_watchlist(disc.symbol, disc.thesis, disc.segment)
+            if added:
+                added_symbols.append(disc)
+                print(f"New symbol added to watchlist: {disc.symbol}")
+
         # Log results
         movers_text = f"SPY: {movers.get('spy_change_pct', 0):+.1f}% | QQQ: {movers.get('qqq_change_pct', 0):+.1f}%"
         underdeploy_note = "\n⚡ **Kapitaldeployment-Priorität aktiv** – Cash > 20%" if underdeployed else ""
+        discoveries_text = ""
+        if added_symbols:
+            disc_lines = "\n".join(f"- **{d.symbol}** ({d.segment}): {d.thesis}" for d in added_symbols)
+            discoveries_text = f"\n\n**Neue Watchlist-Entdeckungen:**\n{disc_lines}"
         log_content = (
             f"**Marktstimmung:** {market_mood}\n"
             f"**Futures:** {movers_text}{underdeploy_note}\n\n"
             f"**News-Zusammenfassung:**\n{news_text}\n\n"
             f"**Top-Kandidaten:**\n{analyst.format_candidates_for_log(candidates)}"
+            f"{discoveries_text}"
         )
         log.append_to_daily_log("Pre-Market Research", log_content)
 
@@ -86,8 +99,13 @@ def run_premarket() -> None:
             [{"symbol": c.symbol, "score": c.score, "reason": c.reason} for c in candidates],
             market_mood,
         )
+        if added_symbols:
+            disc_msg = "🔍 Neue Watchlist-Entdeckungen:\n" + "\n".join(
+                f"• {d.symbol} – {d.thesis[:80]}" for d in added_symbols
+            )
+            telegram.send_message(disc_msg)
 
-        print(f"Pre-market complete. {len(candidates)} candidates identified.")
+        print(f"Pre-market complete. {len(candidates)} candidates identified, {len(added_symbols)} new symbols added.")
 
     except Exception as e:
         err = traceback.format_exc()

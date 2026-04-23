@@ -27,19 +27,29 @@ Response format (valid JSON only, no markdown wrapping):
 
 _ANALYSIS_SYSTEM = """You are Zenith's pre-market analyst. You rank stocks from a watchlist for today's trading session based on technical scores, news sentiment, and learned patterns.
 
-Rules: stocks/ETFs only, no options. Return a JSON array of trade candidates ranked by priority.
+Rules: stocks/ETFs only, no options. Return a JSON object with two keys.
 
-Response format (valid JSON array):
-[
-  {
-    "symbol": "AAPL",
-    "score": 75,
-    "reason": "EMA bullish crossover, volume 1.4x avg, positive news",
-    "risk": "Earnings in 2 days — reduce position size",
-    "action": "watch_for_entry"
-  }
-]
-Possible actions: "strong_entry", "watch_for_entry", "avoid_today", "add_to_watchlist"."""
+Response format (valid JSON object, no markdown):
+{
+  "candidates": [
+    {
+      "symbol": "AAPL",
+      "score": 75,
+      "reason": "EMA bullish crossover, volume 1.4x avg, positive news",
+      "risk": "Earnings in 2 days — reduce position size",
+      "action": "watch_for_entry"
+    }
+  ],
+  "new_discoveries": [
+    {
+      "symbol": "PLTR",
+      "thesis": "Strong AI government contracts, bullish momentum, not yet on watchlist",
+      "segment": "Mid-Cap Tech / AI"
+    }
+  ]
+}
+Possible actions: "strong_entry", "watch_for_entry", "avoid_today".
+For new_discoveries: suggest up to 3 US stocks/ETFs from today's news that are NOT already on the watchlist and look interesting for the EMA strategy. Leave empty array [] if nothing notable."""
 
 
 @dataclass
@@ -49,6 +59,13 @@ class TradeCandidate:
     reason: str
     risk: str = ""
     action: str = "watch_for_entry"
+
+
+@dataclass
+class DiscoveredSymbol:
+    symbol: str
+    thesis: str
+    segment: str = "Discovered"
 
 
 @dataclass
@@ -79,7 +96,7 @@ class LLMAnalyst:
         news_summary: str,
         scored_candidates: list,
         is_underdeployed: bool = False,
-    ) -> list[TradeCandidate]:
+    ) -> tuple[list[TradeCandidate], list[DiscoveredSymbol]]:
         underdeployed_note = (
             "\n⚡ CAPITAL DEPLOYMENT PRIORITY: Cash > 20% of portfolio. "
             "Relax signal thresholds — accept candidates with confidence ≥ 60/100."
@@ -91,23 +108,27 @@ class LLMAnalyst:
             for c in scored_candidates
         )
 
-        user_message = f"""Today's watchlist and technical scores:
+        user_message = f"""Current watchlist symbols (do NOT add these to new_discoveries):
+{watchlist_content[:1000]}
+
+Today's technical scores:
 {scored_text}
 
 News summary:
 {news_summary}
 {underdeployed_note}
 
-Rank the top candidates for today and return a JSON array.
+Rank the top candidates and suggest new discoveries. Return a JSON object.
 Learnings context:
-{learnings_content[:3000]}"""
+{learnings_content[:2000]}"""
 
         try:
-            text = self._call(_ANALYSIS_SYSTEM, user_message, max_tokens=1024)
+            text = self._call(_ANALYSIS_SYSTEM, user_message, max_tokens=1200)
             if "```" in text:
                 text = text.split("```")[1].lstrip("json").strip()
             data = json.loads(text)
-            return [
+
+            candidates = [
                 TradeCandidate(
                     symbol=item["symbol"],
                     score=item.get("score", 50),
@@ -115,14 +136,23 @@ Learnings context:
                     risk=item.get("risk", ""),
                     action=item.get("action", "watch_for_entry"),
                 )
-                for item in data
+                for item in data.get("candidates", [])
             ]
+            discoveries = [
+                DiscoveredSymbol(
+                    symbol=item["symbol"].upper(),
+                    thesis=item.get("thesis", ""),
+                    segment=item.get("segment", "Discovered"),
+                )
+                for item in data.get("new_discoveries", [])
+            ]
+            return candidates, discoveries
         except Exception as e:
             print(f"LLM analysis failed: {e}")
             return [
                 TradeCandidate(symbol=c.symbol, score=c.score, reason=", ".join(c.signals_met))
                 for c in scored_candidates[:5]
-            ]
+            ], []
 
     def reflect_on_day(
         self,

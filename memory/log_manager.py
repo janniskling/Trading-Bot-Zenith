@@ -98,6 +98,23 @@ class LogManager:
                 symbols.append(m2.group(1))
         return content, list(dict.fromkeys(symbols))  # deduplicated, order preserved
 
+    def add_symbol_to_watchlist(self, symbol: str, thesis: str, segment: str = "Discovered") -> bool:
+        """Adds a new symbol to the watchlist. Returns False if already present."""
+        content, existing_symbols = self.read_watchlist()
+        if symbol.upper() in existing_symbols:
+            return False
+        today = date.today().isoformat()
+        new_entry = (
+            f"\n## {segment}\n\n"
+            f"### {symbol.upper()}\n"
+            f"**Segment:** {segment}  \n"
+            f"**Grund für Beobachtung:** {thesis}  \n"
+            f"**Strategie:** EMA-Crossover auf Daily Chart  \n"
+            f"**Bot notes**: (hinzugefügt {today})\n"
+        )
+        WATCHLIST_PATH.write_text(content + new_entry, encoding="utf-8")
+        return True
+
     def update_watchlist(self, notes: dict[str, str]) -> None:
         """Updates **Bot notes** section for tickers in the watchlist."""
         if not notes:
