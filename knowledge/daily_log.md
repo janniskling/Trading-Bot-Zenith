@@ -7,3 +7,9 @@
 *14:54 UTC*
 
 Keine Kandidaten aus Pre-Market-Phase.
+
+## Midday Check
+*17:29 UTC*
+
+Positionen geprüft: 0
+Aktionen: 0
