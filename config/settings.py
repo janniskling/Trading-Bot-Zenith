@@ -44,6 +44,12 @@ MAX_RSI_ENTRY: float = 70.0
 MAX_RSI_EXIT: float = 80.0
 MIN_BARS_REQUIRED: int = 60
 
+# --- Strategy Improvements ---
+MIN_ADX: float = 25.0            # Trend strength filter — only trade real trends
+ATR_STOP_MULTIPLIER: float = 1.5 # Stop-loss = 1.5 × ATR(14), adapts to volatility
+MAX_HOLD_DAYS: int = 10          # Exit stagnant positions after 10 trading days
+SPY_TREND_FILTER: bool = True    # Only trade when SPY > EMA-200 (bull market)
+
 # --- File Paths ---
 BASE_DIR: Path = Path(__file__).parent.parent
 KNOWLEDGE_DIR: Path = BASE_DIR / "knowledge"

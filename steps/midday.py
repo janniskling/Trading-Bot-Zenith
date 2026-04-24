@@ -5,9 +5,10 @@ import sys
 import traceback
 
 from core.alpaca_client import AlpacaClient
-from core.market_utils import should_skip_today
+from core.market_utils import should_skip_today, count_trading_days_since
 from core.portfolio_manager import PortfolioManager
 from core.telegram_bot import TelegramNotifier
+from config.settings import MAX_HOLD_DAYS
 from memory.log_manager import LogManager
 from strategy.momentum_ema import MomentumEMAStrategy
 
@@ -30,18 +31,27 @@ def run_midday() -> None:
         actions_taken: list[str] = []
 
         for pos in positions:
+            if not portfolio.can_trade(state):
+                print("Daily trade limit reached, stopping.")
+                break
+
+            # Time-in-trade filter: exit stagnant positions after MAX_HOLD_DAYS
+            entry_date = client.get_position_entry_date(pos.symbol)
+            if entry_date:
+                days_held = count_trading_days_since(str(entry_date))
+                if days_held >= MAX_HOLD_DAYS:
+                    print(f"Closing {pos.symbol}: held {days_held} trading days (max {MAX_HOLD_DAYS})")
+                    client.close_position(pos.symbol)
+                    actions_taken.append(f"CLOSED {pos.symbol} – Haltedauer {days_held} Tage erreicht")
+                    state = portfolio.get_portfolio_state()
+                    continue
+
             exit_signal = strategy.check_exit_signal(pos.symbol)
             if exit_signal:
-                # Only sell if we haven't hit the daily trade limit
-                if portfolio.can_trade(state):
-                    print(f"Closing {pos.symbol}: {exit_signal.reason}")
-                    client.close_position(pos.symbol)
-                    actions_taken.append(f"CLOSED {pos.symbol} – {exit_signal.reason}")
-                    # Refresh state
-                    state = portfolio.get_portfolio_state()
-                else:
-                    print(f"Would close {pos.symbol} but daily trade limit reached")
-                    actions_taken.append(f"SKIP CLOSE {pos.symbol} – Tageslimit erreicht")
+                print(f"Closing {pos.symbol}: {exit_signal.reason}")
+                client.close_position(pos.symbol)
+                actions_taken.append(f"CLOSED {pos.symbol} – {exit_signal.reason}")
+                state = portfolio.get_portfolio_state()
 
         log_lines = [
             f"Positionen geprüft: {len(positions)}",

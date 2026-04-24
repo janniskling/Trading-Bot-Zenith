@@ -3,9 +3,9 @@ from __future__ import annotations
 import pandas as pd
 
 from config.settings import (
-    EMA_FAST, EMA_SLOW, EMA_TREND,
     MAX_RSI_ENTRY, MAX_RSI_EXIT, MIN_RSI,
     MIN_BARS_REQUIRED, VOLUME_CONFIRMATION_MULTIPLIER, MIN_AVG_DAILY_VOLUME,
+    MIN_ADX, ATR_STOP_MULTIPLIER,
 )
 from strategy.base_strategy import BaseStrategy, EntrySignal, ExitSignal, ScoredCandidate
 from strategy.signals import add_indicators, detect_ema_crossover, calculate_volume_ratio
@@ -71,16 +71,29 @@ class MomentumEMAStrategy(BaseStrategy):
         reasons.append(f"RSI {rsi:.1f}")
         score += 20
 
+        # 5. ADX filter — only trade real trends, not sideways noise
+        adx = last["adx_14"]
+        if adx < MIN_ADX:
+            return None
+        reasons.append(f"ADX {adx:.1f}")
+        score += 10
+
         # Minimum liquidity check
         avg_vol = df["volume"].tail(20).mean()
         if avg_vol < MIN_AVG_DAILY_VOLUME:
             return None
 
+        # ATR-based stop: adapts to each stock's actual volatility
+        atr = float(last["atr_14"])
+        entry = float(last["close"])
+        atr_stop = round(entry - ATR_STOP_MULTIPLIER * atr, 2)
+
         return EntrySignal(
             symbol=symbol,
-            entry_price=float(last["close"]),
-            confidence_score=score,
+            entry_price=entry,
+            confidence_score=min(score, 100),
             reason=", ".join(reasons),
+            atr_stop=atr_stop,
         )
 
     def check_exit_signal(self, symbol: str, bars: pd.DataFrame | None = None) -> ExitSignal | None:

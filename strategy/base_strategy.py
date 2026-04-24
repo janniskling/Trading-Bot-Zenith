@@ -11,6 +11,7 @@ class EntrySignal:
     entry_price: float
     confidence_score: int  # 0-100
     reason: str
+    atr_stop: float = 0.0  # ATR-based stop price; 0 = fall back to fixed %
 
 
 @dataclass

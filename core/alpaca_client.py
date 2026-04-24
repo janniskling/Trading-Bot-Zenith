@@ -9,10 +9,8 @@ from alpaca.trading.client import TradingClient
 from alpaca.trading.enums import AssetClass, OrderSide, OrderType, TimeInForce
 from alpaca.trading.requests import (
     GetOrdersRequest,
-    LimitOrderRequest,
     MarketOrderRequest,
     OrderRequest,
-    StopLimitOrderRequest,
 )
 from alpaca.data.historical import StockHistoricalDataClient
 from alpaca.data.requests import StockBarsRequest
@@ -232,6 +230,19 @@ class AlpacaClient:
             ]
         except Exception:
             return []
+
+    def get_position_entry_date(self, symbol: str) -> date | None:
+        """Returns the date the current position was most recently opened via a filled buy order."""
+        try:
+            req = GetOrdersRequest(status="closed", symbols=[symbol], side=OrderSide.BUY, limit=10)
+            orders = self._trading.get_orders(filter=req)
+            filled = [o for o in orders if str(o.status) == "filled" and o.filled_at]
+            if not filled:
+                return None
+            latest = max(filled, key=lambda o: o.filled_at)
+            return latest.filled_at.date()
+        except Exception:
+            return None
 
     def wait_for_market_open(self, max_wait_seconds: int = 300) -> bool:
         for _ in range(max_wait_seconds // 10):

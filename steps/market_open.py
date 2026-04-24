@@ -4,6 +4,7 @@ from __future__ import annotations
 import sys
 import traceback
 
+from config.settings import SPY_TREND_FILTER
 from core.alpaca_client import AlpacaClient
 from core.market_utils import should_skip_today
 from core.news_fetcher import fetch_earnings_calendar
@@ -11,6 +12,17 @@ from core.portfolio_manager import PortfolioManager
 from core.telegram_bot import TelegramNotifier
 from memory.log_manager import LogManager
 from strategy.momentum_ema import MomentumEMAStrategy
+
+
+def _spy_is_bullish(client: AlpacaClient) -> bool:
+    try:
+        bars = client.get_bars("SPY", "1Day", limit=210)
+        if len(bars) < 200:
+            return True  # not enough data — don't block trading
+        ema200 = bars["close"].ewm(span=200, adjust=False).mean().iloc[-1]
+        return float(bars["close"].iloc[-1]) >= float(ema200)
+    except Exception:
+        return True  # fail open
 
 
 def run_market_open() -> None:
@@ -39,6 +51,14 @@ def run_market_open() -> None:
             print("No candidates from pre-market log.")
             log.append_to_daily_log("Market Open", "Keine Kandidaten aus Pre-Market-Phase.")
             telegram.send_market_open_summary([])
+            return
+
+        # Market breadth filter: only trade in bull market (SPY > EMA-200)
+        if SPY_TREND_FILTER and not _spy_is_bullish(client):
+            msg = "SPY unter EMA-200 — Bärenmarkt erkannt, kein Trading heute"
+            print(msg)
+            log.append_to_daily_log("Market Open – Marktfilter", f"🚫 {msg}")
+            telegram.send_message(f"🚫 {msg}")
             return
 
         state = portfolio.get_portfolio_state()
@@ -71,8 +91,8 @@ def run_market_open() -> None:
                 continue
 
             entry = signal.entry_price
-            stop = portfolio.get_stop_price(entry)
-            take_profit = portfolio.get_take_profit_price(entry)
+            stop = portfolio.get_stop_price(entry, atr_stop=signal.atr_stop)
+            take_profit = portfolio.get_take_profit_price(entry, stop_price=stop)
             qty = portfolio.calculate_position_size(entry, stop, state.equity)
 
             if qty <= 0:

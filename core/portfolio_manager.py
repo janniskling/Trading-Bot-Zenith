@@ -87,10 +87,15 @@ class PortfolioManager:
         qty = min(shares_by_risk, shares_by_cap)
         return max(1, qty)
 
-    def get_stop_price(self, entry_price: float) -> float:
+    def get_stop_price(self, entry_price: float, atr_stop: float = 0.0) -> float:
+        if atr_stop > 0 and atr_stop < entry_price:
+            return atr_stop
         return round(entry_price * (1 - DEFAULT_STOP_LOSS_PCT), 2)
 
-    def get_take_profit_price(self, entry_price: float) -> float:
+    def get_take_profit_price(self, entry_price: float, stop_price: float | None = None) -> float:
+        if stop_price is not None:
+            risk = entry_price - stop_price
+            return round(entry_price + 2 * risk, 2)  # strict 2:1 R/R on actual stop
         return round(entry_price * (1 + DEFAULT_TAKE_PROFIT_PCT), 2)
 
     def get_target_position_count(self) -> int:
