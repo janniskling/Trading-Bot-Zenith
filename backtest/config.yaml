@@ -53,16 +53,43 @@ risk:
   reward_risk_ratio:  2.0    # take-profit = entry + ratio × stop_distance
   max_hold_bars:      10     # force-exit after 10 trading days
 
-# ── Slippage Model ────────────────────────────────────────────────────────────
+# ── Baseline Slippage Model (naive high-low proxy) ────────────────────────────
 slippage:
-  # Estimate bid-ask spread as (high - low) / close for each bar.
-  # Applied slippage = max(min_pct, spread_fraction × spread_factor)
   spread_factor:  0.5        # half the intraday spread
   min_pct:        0.001      # floor: 0.1%
-  max_pct:        0.005      # floor cap: 0.5%
+  max_pct:        0.005      # cap: 0.5%
+
+# ── Realistic Transaction Cost Model ─────────────────────────────────────────
+transaction_costs:
+  slippage_base:             0.0005   # 0.05% — irreducible crossing cost
+  spread_default:            0.001    # 0.10% default bid-ask spread
+  spread_factor:             0.5      # use half the estimated spread
+  market_impact_threshold:   0.01     # trigger impact when trade > 1% of ADV
+  market_impact_factor:      0.1      # impact = factor × participation rate
+  sec_fee_rate:              0.0000229   # SEC Section 31 fee on sell value
+  taf_fee_per_share:         0.000166    # FINRA TAF per share sold
+  taf_fee_max:               8.30        # FINRA TAF cap per order
+
+# ── Correlation Filter ────────────────────────────────────────────────────────
+correlation:
+  threshold:      0.70   # reject/reduce when pairwise corr exceeds this
+  lookback_days:  60     # rolling window for return correlation
+  mode:           "reduce"   # "reject" (block) or "reduce" (half size)
+  size_reduction: 0.5    # position size multiplier when mode=reduce
+
+# ── Sector Caps ───────────────────────────────────────────────────────────────
+sector_caps:
+  max_per_sector: 3    # max simultaneous positions per GICS sector
+  max_etf:        2    # max simultaneous ETF positions (high overlap risk)
+  sectors:
+    Tech:          [AAPL, MSFT, NVDA, META, GOOGL, AMD, CRM, INTC, U, SYM]
+    Consumer_Disc: [TSLA, AMZN, SNAP]
+    Financial:     [PYPL, SOFI]
+    ETF:           [SPY, QQQ, IWM]
 
 # ── Report ────────────────────────────────────────────────────────────────────
 report:
-  output_path: "backtest/results/walk_forward_report.pdf"
+  output_path:       "backtest/results/walk_forward_report.pdf"
+  comparison_path:   "backtest/results/comparison_report.pdf"
   figsize: [14, 8]
   dpi: 150
