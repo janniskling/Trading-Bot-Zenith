@@ -133,11 +133,3 @@
 **Grund für Beobachtung:** Symbotic Inc — KI-gesteuerte Lagerautomatisierung, Walmart-Partnerschaft, starkes Wachstum  
 **Strategie:** EMA-Crossover auf Daily Chart  
 **Bot notes**: (neu)
-
-### KBOT
-**Segment:** ETF / Humanoid Robotics & Embodied AI  
-**WKN:** A41PZ8 | **ISIN:** IE000O6Z73N7  
-**Grund für Beobachtung:** KraneShares Global Humanoid & Embodied Intelligence ETF — direktes Exposure in Humanoid-Robotik-Trend  
-**Strategie:** EMA-Crossover auf Daily Chart  
-**⚠️ Hinweis:** ISIN beginnt mit IE (Irland/UCITS) — falls Alpaca diesen Ticker nicht kennt, wird er beim Scoring übersprungen  
-**Bot notes**: (neu)
