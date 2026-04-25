@@ -1,0 +1,7 @@
+# Nur für lokales Walk-Forward Backtesting — wird NICHT auf GitHub Actions ausgeführt.
+# Installation: pip3 install -r backtest/requirements_backtest.txt
+vectorbt>=0.26.0
+matplotlib>=3.7.0
+pyyaml>=6.0
+python-dateutil>=2.8.0
+yfinance>=0.2.40

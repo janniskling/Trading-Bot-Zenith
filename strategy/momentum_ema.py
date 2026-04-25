@@ -30,10 +30,14 @@ class MomentumEMAStrategy(BaseStrategy):
         self._client = alpaca_client
 
     def _get_indicators(self, symbol: str) -> pd.DataFrame | None:
-        bars = self._client.get_bars(symbol, "1Day", limit=80)
-        if len(bars) < MIN_BARS_REQUIRED:
+        try:
+            bars = self._client.get_bars(symbol, "1Day", limit=80)
+            if len(bars) < MIN_BARS_REQUIRED:
+                return None
+            return add_indicators(bars)
+        except Exception as exc:
+            print(f"[{symbol}] get_bars failed, skipping: {exc}")
             return None
-        return add_indicators(bars)
 
     def check_entry_signal(self, symbol: str) -> EntrySignal | None:
         df = self._get_indicators(symbol)

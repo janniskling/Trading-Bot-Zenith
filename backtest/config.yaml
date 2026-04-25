@@ -1,0 +1,68 @@
+# Walk-Forward Validation – Configuration
+# All tuneable parameters live here; code imports from this file.
+
+# ── Data ─────────────────────────────────────────────────────────────────────
+data:
+  start_date: "2019-01-01"   # extra year for indicator warm-up before IS window
+  end_date:   "2025-01-01"
+  benchmark:  "URTH"         # iShares MSCI World ETF
+  symbols:
+    - AAPL
+    - MSFT
+    - NVDA
+    - TSLA
+    - AMZN
+    - META
+    - GOOGL
+    - AMD
+    - CRM
+    - PYPL
+    - INTC
+    - SOFI
+    - SNAP
+    - SPY
+    - QQQ
+    - IWM
+    - SYM
+
+# ── Walk-Forward Windows ──────────────────────────────────────────────────────
+walk_forward:
+  in_sample_months:  24   # 2 years in-sample
+  out_of_sample_months: 6 # 6 months OOS
+  stride_months:      3   # re-optimise every quarter
+
+# ── Strategy Indicators ───────────────────────────────────────────────────────
+strategy:
+  ema_fast:   9
+  ema_mid:   21
+  ema_slow:  50
+  rsi_period: 14
+  rsi_oversold:  45    # entry only when RSI > this
+  rsi_overbought: 70
+  adx_period: 14
+  adx_min:   25        # trend-strength filter
+  atr_period: 14
+  atr_stop_multiplier: 1.5   # stop = entry - (multiplier × ATR)
+  volume_factor: 1.5         # volume must be > factor × 20-bar average
+  spy_ema_trend: 200         # SPY must be above this EMA (bear filter)
+
+# ── Risk / Position Sizing ────────────────────────────────────────────────────
+risk:
+  risk_per_trade_pct: 0.01   # 1% equity risked per trade
+  max_position_pct:   0.20   # single position cap: 20% of equity
+  reward_risk_ratio:  2.0    # take-profit = entry + ratio × stop_distance
+  max_hold_bars:      10     # force-exit after 10 trading days
+
+# ── Slippage Model ────────────────────────────────────────────────────────────
+slippage:
+  # Estimate bid-ask spread as (high - low) / close for each bar.
+  # Applied slippage = max(min_pct, spread_fraction × spread_factor)
+  spread_factor:  0.5        # half the intraday spread
+  min_pct:        0.001      # floor: 0.1%
+  max_pct:        0.005      # floor cap: 0.5%
+
+# ── Report ────────────────────────────────────────────────────────────────────
+report:
+  output_path: "backtest/results/walk_forward_report.pdf"
+  figsize: [14, 8]
+  dpi: 150
