@@ -53,7 +53,6 @@ def run_filter_funnel(
     spy_ema200   = _ema(spy_slice.ffill(), sc["spy_ema_trend"])
     spy_bull     = (spy_slice >= spy_ema200).fillna(False)
 
-    crossed      = (fast > mid) & (fast.shift(1) <= mid.shift(1))
     ema_bull     = (fast > mid) & (mid > slow)
     cross_lookback = sc.get("crossover_lookback", 1)
     raw_cross    = (fast > mid) & (fast.shift(1) <= mid.shift(1))

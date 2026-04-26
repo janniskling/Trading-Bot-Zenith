@@ -3,10 +3,9 @@ import numpy as np
 import pandas as pd
 
 from backtest.correlation_filter import (
+    _build_symbol_to_sector,
     check_correlation_constraint,
     apply_correlation_filter,
-    SYMBOL_TO_SECTOR,
-    SECTOR_MAP,
 )
 
 
@@ -27,6 +26,25 @@ def _make_prices(n: int = 80) -> pd.DataFrame:
     return prices
 
 
+def _make_cfg(mode: str = "reduce", threshold: float = 0.70) -> dict:
+    return {
+        "correlation": {
+            "threshold": threshold,
+            "lookback_days": 60,
+            "mode": mode,
+            "size_reduction": 0.5,
+        },
+        "sector_caps": {
+            "max_per_sector": 3,
+            "max_etf": 2,
+            "sectors": {
+                "Tech": ["AAPL", "MSFT"],
+                "Other": ["TSLA"],
+            },
+        },
+    }
+
+
 # ── check_correlation_constraint ──────────────────────────────────────────────
 
 class TestCheckCorrelationConstraint:
@@ -39,7 +57,6 @@ class TestCheckCorrelationConstraint:
         assert corrs == {}
 
     def test_uncorrelated_symbol_allowed(self):
-        # TSLA is independent → should be allowed even with AAPL open
         allowed, corrs = check_correlation_constraint(
             "TSLA", ["AAPL"], self.returns, threshold=0.70
         )
@@ -47,7 +64,6 @@ class TestCheckCorrelationConstraint:
         assert corrs["AAPL"] < 0.70
 
     def test_highly_correlated_blocked(self):
-        # MSFT is ~0.95 correlated with AAPL → should be blocked
         allowed, corrs = check_correlation_constraint(
             "MSFT", ["AAPL"], self.returns, threshold=0.70
         )
@@ -74,10 +90,9 @@ class TestCheckCorrelationConstraint:
         allowed, _ = check_correlation_constraint(
             "MSFT", ["AAPL"], short_returns, lookback_days=60, threshold=0.70
         )
-        assert allowed is True  # not enough data → don't block
+        assert allowed is True
 
     def test_custom_threshold(self):
-        # With threshold=0.999 the synthetic data (corr ~0.997) should pass
         allowed, _ = check_correlation_constraint(
             "MSFT", ["AAPL"], self.returns, threshold=0.999
         )
@@ -86,31 +101,14 @@ class TestCheckCorrelationConstraint:
 
 # ── apply_correlation_filter ──────────────────────────────────────────────────
 
-def _make_cfg(mode: str = "reduce", threshold: float = 0.70) -> dict:
-    return {
-        "correlation": {
-            "threshold": threshold,
-            "lookback_days": 60,
-            "mode": mode,
-            "size_reduction": 0.5,
-        },
-        "sector_caps": {
-            "max_per_sector": 3,
-            "max_etf": 2,
-            "sectors": SECTOR_MAP,
-        },
-    }
-
-
 class TestApplyCorrelationFilter:
     def setup_method(self):
         self.prices = _make_prices(80)
         n = 60
         dates = self.prices.index[-n:]
-        # Both AAPL and MSFT have entry signals on the same bar
         entries = pd.DataFrame(False, index=dates, columns=["AAPL", "MSFT", "TSLA"])
         entries.iloc[10, entries.columns.get_loc("AAPL")] = True
-        entries.iloc[10, entries.columns.get_loc("MSFT")] = True  # same bar as AAPL
+        entries.iloc[10, entries.columns.get_loc("MSFT")] = True
         entries.iloc[20, entries.columns.get_loc("TSLA")] = True
         self.entries = entries
         self.oos_start = str(dates[0].date())
@@ -121,9 +119,8 @@ class TestApplyCorrelationFilter:
         filtered, size_mult, log = apply_correlation_filter(
             self.entries, self.prices, self.oos_start, self.oos_end, cfg
         )
-        # Both entries should survive in reduce mode
-        assert filtered.iloc[10]["AAPL"] is True or filtered.iloc[10]["AAPL"] == True
-        assert filtered.iloc[10]["MSFT"] is True or filtered.iloc[10]["MSFT"] == True
+        assert filtered.iloc[10]["AAPL"] == True
+        assert filtered.iloc[10]["MSFT"] == True
 
     def test_reduce_mode_halves_size(self):
         cfg = _make_cfg(mode="reduce")
@@ -131,7 +128,6 @@ class TestApplyCorrelationFilter:
             self.entries, self.prices, self.oos_start, self.oos_end, cfg
         )
         bar_date = self.entries.index[10]
-        # Lower-priority symbol (MSFT, alphabetically after AAPL) should be halved
         assert size_mult.loc[bar_date, "MSFT"] == 0.5
 
     def test_reject_mode_removes_lower_priority(self):
@@ -140,8 +136,7 @@ class TestApplyCorrelationFilter:
             self.entries, self.prices, self.oos_start, self.oos_end, cfg
         )
         bar_date = self.entries.index[10]
-        # AAPL survives (higher priority alphabetically), MSFT is blocked
-        assert filtered.loc[bar_date, "AAPL"] is True or filtered.loc[bar_date, "AAPL"] == True
+        assert filtered.loc[bar_date, "AAPL"] == True
         assert not filtered.loc[bar_date, "MSFT"]
 
     def test_uncorrelated_tsla_unaffected(self):
@@ -150,7 +145,7 @@ class TestApplyCorrelationFilter:
             self.entries, self.prices, self.oos_start, self.oos_end, cfg
         )
         bar_date = self.entries.index[20]
-        assert filtered.loc[bar_date, "TSLA"] is True or filtered.loc[bar_date, "TSLA"] == True
+        assert filtered.loc[bar_date, "TSLA"] == True
         assert size_mult.loc[bar_date, "TSLA"] == 1.0
 
     def test_filter_log_records_events(self):
@@ -162,20 +157,25 @@ class TestApplyCorrelationFilter:
         assert any("CORR_REJECT" in entry or "CORR_REDUCE" in entry for entry in log)
 
 
-# ── Sector mapping ─────────────────────────────────────────────────────────────
+# ── _build_symbol_to_sector ────────────────────────────────────────────────────
 
-class TestSectorMapping:
-    def test_all_watchlist_symbols_mapped(self):
-        watchlist = ["AAPL","MSFT","NVDA","TSLA","AMZN","META","GOOGL","AMD","CRM",
-                     "PYPL","INTC","SOFI","SNAP","SPY","QQQ","IWM","SYM"]
-        unmapped = [s for s in watchlist if s not in SYMBOL_TO_SECTOR]
-        assert unmapped == [], f"Unmapped symbols: {unmapped}"
+class TestBuildSymbolToSector:
+    def test_basic_mapping(self):
+        cfg = {"sector_caps": {"sectors": {"Tech": ["AAPL", "MSFT"], "ETF": ["SPY"]}}}
+        mapping = _build_symbol_to_sector(cfg)
+        assert mapping["AAPL"] == "Tech"
+        assert mapping["MSFT"] == "Tech"
+        assert mapping["SPY"] == "ETF"
 
-    def test_no_duplicate_symbols_across_sectors(self):
-        all_syms = [sym for syms in SECTOR_MAP.values() for sym in syms]
-        assert len(all_syms) == len(set(all_syms)), "Duplicate symbols across sectors"
+    def test_empty_cfg_returns_empty(self):
+        assert _build_symbol_to_sector({}) == {}
 
-    def test_etf_sector_correct(self):
-        assert SYMBOL_TO_SECTOR["SPY"] == "ETF"
-        assert SYMBOL_TO_SECTOR["QQQ"] == "ETF"
-        assert SYMBOL_TO_SECTOR["IWM"] == "ETF"
+    def test_no_duplicates(self):
+        cfg = {"sector_caps": {"sectors": {"A": ["AAPL", "MSFT"], "B": ["TSLA"]}}}
+        mapping = _build_symbol_to_sector(cfg)
+        assert len(mapping) == 3
+
+    def test_unknown_symbol_not_in_mapping(self):
+        cfg = {"sector_caps": {"sectors": {"Tech": ["AAPL"]}}}
+        mapping = _build_symbol_to_sector(cfg)
+        assert "UNKNOWN" not in mapping
