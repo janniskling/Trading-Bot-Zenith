@@ -5,6 +5,9 @@ on:
     - cron: '30 16 * * 1-5'  # 16:30 UTC = 18:30 Berlin (Mo-Fr)
   workflow_dispatch:
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
 jobs:
   midday:
     runs-on: ubuntu-latest

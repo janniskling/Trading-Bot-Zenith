@@ -5,6 +5,9 @@ on:
     - cron: '0 20 * * 1-5'  # 20:00 UTC = 22:00 Berlin (Mo-Fr)
   workflow_dispatch:
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
 jobs:
   market-close:
     runs-on: ubuntu-latest

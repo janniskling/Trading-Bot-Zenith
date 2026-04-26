@@ -5,6 +5,9 @@ on:
     - cron: '0 21 * * 1-5'  # 21:00 UTC = 23:00 Berlin (Mo-Fr)
   workflow_dispatch:
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
 jobs:
   nightly-reflection:
     runs-on: ubuntu-latest
