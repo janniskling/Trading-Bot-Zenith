@@ -35,6 +35,18 @@ def load_config(path: Path = _CFG_PATH) -> dict[str, Any]:
         return yaml.safe_load(f)
 
 
+def flatten_watchlist(cfg: dict[str, Any]) -> list[str]:
+    """Return an ordered, deduplicated flat list of symbols from the sectored watchlist."""
+    watchlist = cfg.get("watchlist", {})
+    if not watchlist:
+        return cfg.get("data", {}).get("symbols", [])
+    seen: dict[str, None] = {}
+    for syms in watchlist.values():
+        for s in (syms or []):
+            seen[s] = None
+    return list(seen)
+
+
 # ── Backtest configuration ─────────────────────────────────────────────────────
 
 @dataclass
@@ -146,14 +158,22 @@ def compute_signals(
         vol_ma = df["volume"].rolling(20).mean()
         vol_ok = df["volume"] > sc["volume_factor"] * vol_ma
         ema_bull = (fast > mid) & (mid > slow)
-        crossed = (fast > mid) & (fast.shift(1) <= mid.shift(1))
-        rsi_ok = (rsi > sc["rsi_oversold"]) & (rsi < sc["rsi_overbought"])
-        adx_ok = adx >= sc["adx_min"]
+
+        # Crossover within the last crossover_lookback bars
+        cross_lookback: int = sc.get("crossover_lookback", 1)
+        raw_cross = (fast > mid) & (fast.shift(1) <= mid.shift(1))
+        crossed = raw_cross.rolling(cross_lookback).max().astype(bool)
+
+        rsi_min = sc.get("rsi_min", sc.get("rsi_oversold", 45))
+        rsi_max = sc.get("rsi_max", sc.get("rsi_overbought", 70))
+        rsi_ok = (rsi > rsi_min) & (rsi < rsi_max)
+        adx_lookback: int = sc.get("adx_lookback", 5)
+        adx_ok = adx.rolling(adx_lookback).max() >= sc["adx_min"]
         bull_aligned = spy_bull.reindex(close.index).fillna(False)
 
-        entry = crossed & ema_bull & rsi_ok & adx_ok & vol_ok & bull_aligned
+        entry = (crossed & ema_bull & rsi_ok & adx_ok & vol_ok & bull_aligned).fillna(False)
         atr_frac = (sc["atr_stop_multiplier"] * atr / close).clip(upper=0.15)
-        exit_sig = fast < mid
+        exit_sig = (fast < mid).fillna(False)
 
         all_entries[sym] = entry.astype(bool)
         all_exits[sym] = exit_sig.astype(bool)
@@ -244,7 +264,9 @@ def compute_metrics(
     window: WFWindow,
     benchmark_oos: pd.Series,
 ) -> WindowMetrics:
-    stats = pf.stats()
+    # group_by=True aggregates all symbol columns into one portfolio view,
+    # avoiding the silent mean-across-columns that int() would truncate to 0.
+    stats = pf.stats(group_by=True)
     total_return = _safe(stats.get("Total Return [%]", 0)) / 100
     sharpe = _safe(stats.get("Sharpe Ratio", 0))
     sortino = _safe(stats.get("Sortino Ratio", 0))
@@ -337,11 +359,21 @@ def run_oos_backtest(
 
     # Slippage: costs model or baseline
     fees = regulatory_fee_fraction(cfg) if backtest_cfg.use_costs else 0.0
-    avg_slip = slip_oos.median().fillna(0.001).to_dict()
-    effective_slip_dict = (
-        {col: avg_slip.get(col, 0.001) for col in cols}
-        if backtest_cfg.use_costs else 0.0
-    )
+    if backtest_cfg.use_costs:
+        avg_slip = slip_oos.median().fillna(0.001)
+        slip_vals = {col: avg_slip.get(col, 0.001) for col in cols}
+        effective_slip = pd.DataFrame(
+            {col: slip_vals[col] for col in cols},
+            index=price_oos.index,
+        )
+    else:
+        effective_slip = 0.0
+
+    # Ensure numpy dtypes — numba rejects Python object arrays
+    entry_oos = entry_oos.astype(bool)
+    exit_oos = exit_oos.astype(bool)
+    sl_oos = sl_oos.astype(float).fillna(0.0)
+    price_oos = price_oos.astype(float)
 
     try:
         pf = vbt.Portfolio.from_signals(
@@ -351,9 +383,9 @@ def run_oos_backtest(
             sl_stop=sl_oos,
             init_cash=10_000.0,
             size=size_df,
-            size_type="valuepercent",
+            size_type="Percent",
             fees=fees,
-            slippage=effective_slip_dict,
+            slippage=effective_slip,
             accumulate=False,
             freq="D",
         )
@@ -554,7 +586,7 @@ class WalkForwardValidator:
 
         cfg = self.cfg
         data_cfg = cfg["data"]
-        symbols: list[str] = data_cfg["symbols"]
+        symbols: list[str] = flatten_watchlist(cfg)
         benchmark_sym: str = data_cfg["benchmark"]
         all_syms = list(dict.fromkeys(symbols + [benchmark_sym, "SPY"]))
 
@@ -658,6 +690,48 @@ class WalkForwardValidator:
             verdict=verdict,
             filter_log=all_filter_logs,
         )
+
+    def run_diagnostics(self, output_dir: Path | None = None) -> None:
+        """Run pre-backtest signal diagnostics (funnel + frequency check)."""
+        from backtest.signal_diagnostics import (
+            run_all_funnels,
+            check_signal_frequency,
+            print_funnel_report,
+            save_funnel_csv,
+        )
+
+        data = self._prepare()
+        cfg = self.cfg
+
+        spy_close = (
+            data.ohlcv["SPY"]["close"]
+            if "SPY" in data.ohlcv
+            else pd.Series(dtype=float)
+        )
+
+        print("\n" + "=" * 65)
+        print("PRE-BACKTEST SIGNAL DIAGNOSTICS")
+        print("=" * 65)
+
+        check_signal_frequency(
+            data.entries,
+            cfg["data"]["start_date"],
+            cfg["data"]["end_date"],
+        )
+
+        funnel_df = run_all_funnels(
+            data.ohlcv,
+            spy_close,
+            cfg,
+            start=cfg["data"]["start_date"],
+            end=cfg["data"]["end_date"],
+        )
+        print_funnel_report(funnel_df, cfg)
+
+        out = output_dir or Path(cfg["report"]["output_path"]).parent
+        out.mkdir(parents=True, exist_ok=True)
+        csv_path = save_funnel_csv(funnel_df, out)
+        print(f"  Funnel CSV → {csv_path.resolve()}\n")
 
     def run_comparison(self) -> ComparisonResult:
         """Run all 3 configs (data downloaded once) and return comparison."""

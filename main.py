@@ -6,6 +6,7 @@ Usage:
     python main.py --step midday
     python main.py --step market_close
     python main.py --step nightly_reflection
+    python main.py --step weekly_summary
     python main.py --step account_info          # quick connection test
 """
 import argparse
@@ -24,6 +25,7 @@ def main() -> None:
             "midday",
             "market_close",
             "nightly_reflection",
+            "weekly_summary",
             "account_info",
         ],
         help="Which daily step to run",
@@ -40,6 +42,7 @@ def main() -> None:
         "midday": "steps.midday:run_midday",
         "market_close": "steps.market_close:run_market_close",
         "nightly_reflection": "steps.nightly_reflection:run_nightly_reflection",
+        "weekly_summary": "steps.weekly_summary:run_weekly_summary",
     }
 
     module_path, func_name = step_map[args.step].split(":")

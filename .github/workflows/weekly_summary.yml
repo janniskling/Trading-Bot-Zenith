@@ -1,0 +1,35 @@
+name: Zenith – Weekly Summary
+
+on:
+  schedule:
+    - cron: '0 18 * * 0'  # 18:00 UTC = 20:00 Berlin (Sunday)
+  workflow_dispatch:
+
+jobs:
+  weekly-summary:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run Weekly Summary Step
+        env:
+          ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
+          ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+          ALPACA_BASE_URL: ${{ secrets.ALPACA_BASE_URL }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TRADING_START_DATE: ${{ secrets.TRADING_START_DATE }}
+        run: python main.py --step weekly_summary

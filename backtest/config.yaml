@@ -1,29 +1,115 @@
 # Walk-Forward Validation – Configuration
 # All tuneable parameters live here; code imports from this file.
 
+# ── Watchlist (sectored, ~80 symbols) ────────────────────────────────────────
+# Source of truth for which symbols to trade and their sector classification.
+# Sector is used by both the correlation filter and the sector-cap filter.
+watchlist:
+  tech:
+    - AAPL
+    - MSFT
+    - NVDA
+    - META
+    - GOOGL
+    - AMD
+    - CRM
+    - INTC
+    - TSLA
+    - AMZN
+    - ORCL
+    - ADBE
+    - NFLX
+    - AVGO
+    - QCOM
+    - TXN
+    - MU
+    - ARM
+    - SHOP
+    - UBER
+    - ABNB
+    - PLTR
+    - COIN
+    - RBLX
+    - U
+  finance:
+    - JPM
+    - BAC
+    - GS
+    - MS
+    - WFC
+    - C
+    - V
+    - MA
+    - AXP
+    - BLK
+    - SCHW
+    - COF
+    - PYPL
+    - SOFI
+  healthcare:
+    - UNH
+    - JNJ
+    - LLY
+    - PFE
+    - ABBV
+    - MRK
+    - TMO
+    - DHR
+    - ABT
+    - AMGN
+    - GILD
+  consumer:
+    - WMT
+    - COST
+    - HD
+    - NKE
+    - MCD
+    - SBUX
+    - TGT
+    - LOW
+    - DIS
+    - KO
+    - PEP
+    - SNAP
+  industrial_energy:
+    - CAT
+    - BA
+    - GE
+    - HON
+    - UPS
+    - XOM
+    - CVX
+    - COP
+  speculative:
+    - RIVN
+    - LCID
+    - HOOD
+    - ROKU
+  sector_etfs:
+    - XLK
+    - XLF
+    - XLV
+    - XLY
+    - XLP
+    - XLE
+    - XLI
+    - XLRE
+    - XLU
+    - XLB
+    - XLC
+  index_etfs:
+    - SPY
+    - QQQ
+    - IWM
+    - DIA
+    - VTI
+    - VOO
+
 # ── Data ─────────────────────────────────────────────────────────────────────
 data:
   start_date: "2019-01-01"   # extra year for indicator warm-up before IS window
   end_date:   "2025-01-01"
   benchmark:  "URTH"         # iShares MSCI World ETF
-  symbols:
-    - AAPL
-    - MSFT
-    - NVDA
-    - TSLA
-    - AMZN
-    - META
-    - GOOGL
-    - AMD
-    - CRM
-    - PYPL
-    - INTC
-    - SOFI
-    - SNAP
-    - SPY
-    - QQQ
-    - IWM
-    - SYM
 
 # ── Walk-Forward Windows ──────────────────────────────────────────────────────
 walk_forward:
@@ -32,19 +118,23 @@ walk_forward:
   stride_months:      3   # re-optimise every quarter
 
 # ── Strategy Indicators ───────────────────────────────────────────────────────
+# Change 3 (2026-04-26): Loosened for learning-project live-observation mode.
+# See backtest/integrity_check.py for full change log and justification.
 strategy:
   ema_fast:   9
   ema_mid:   21
   ema_slow:  50
   rsi_period: 14
-  rsi_oversold:  45    # entry only when RSI > this
-  rsi_overbought: 70
+  rsi_min:   40     # was 45 — expanded range to include weaker setups (learning mode)
+  rsi_max:   75     # was 70 — expanded range to include weaker setups (learning mode)
   adx_period: 14
-  adx_min:   25        # trend-strength filter
+  adx_min:   20     # was 25 — Wilder's original threshold; reduces to ~84% fewer kills
+  adx_lookback: 10  # unchanged — Wilder-compliant stabilisation window
+  crossover_lookback: 3   # was 1 — realistic reaction window (3-bar confirmation)
   atr_period: 14
-  atr_stop_multiplier: 1.5   # stop = entry - (multiplier × ATR)
-  volume_factor: 1.5         # volume must be > factor × 20-bar average
-  spy_ema_trend: 200         # SPY must be above this EMA (bear filter)
+  atr_stop_multiplier: 1.5
+  volume_factor: 1.1      # was 1.2 — softened; 1.1× is still above-average volume
+  spy_ema_trend: 200      # SPY must be above this EMA (bear filter, unchanged)
 
 # ── Risk / Position Sizing ────────────────────────────────────────────────────
 risk:
@@ -52,40 +142,49 @@ risk:
   max_position_pct:   0.20   # single position cap: 20% of equity
   reward_risk_ratio:  2.0    # take-profit = entry + ratio × stop_distance
   max_hold_bars:      10     # force-exit after 10 trading days
+  max_positions_per_sector: 4   # was 3 — expanded for larger watchlist
+  max_total_positions:      10  # was 8
 
 # ── Baseline Slippage Model (naive high-low proxy) ────────────────────────────
 slippage:
-  spread_factor:  0.5        # half the intraday spread
-  min_pct:        0.001      # floor: 0.1%
-  max_pct:        0.005      # cap: 0.5%
+  spread_factor:  0.5
+  min_pct:        0.001
+  max_pct:        0.005
 
 # ── Realistic Transaction Cost Model ─────────────────────────────────────────
 transaction_costs:
-  slippage_base:             0.0005   # 0.05% — irreducible crossing cost
-  spread_default:            0.001    # 0.10% default bid-ask spread
-  spread_factor:             0.5      # use half the estimated spread
-  market_impact_threshold:   0.01     # trigger impact when trade > 1% of ADV
-  market_impact_factor:      0.1      # impact = factor × participation rate
-  sec_fee_rate:              0.0000229   # SEC Section 31 fee on sell value
-  taf_fee_per_share:         0.000166    # FINRA TAF per share sold
-  taf_fee_max:               8.30        # FINRA TAF cap per order
+  slippage_base:             0.0005
+  spread_default:            0.001
+  spread_factor:             0.5
+  market_impact_threshold:   0.01
+  market_impact_factor:      0.1
+  sec_fee_rate:              0.0000229
+  taf_fee_per_share:         0.000166
+  taf_fee_max:               8.30
 
 # ── Correlation Filter ────────────────────────────────────────────────────────
 correlation:
-  threshold:      0.70   # reject/reduce when pairwise corr exceeds this
-  lookback_days:  60     # rolling window for return correlation
-  mode:           "reduce"   # "reject" (block) or "reduce" (half size)
-  size_reduction: 0.5    # position size multiplier when mode=reduce
+  threshold:      0.70
+  lookback_days:  60
+  mode:           "reduce"
+  size_reduction: 0.5
 
 # ── Sector Caps ───────────────────────────────────────────────────────────────
+# Caps derived from watchlist sectors above. ETF category groups all ETFs.
 sector_caps:
-  max_per_sector: 3    # max simultaneous positions per GICS sector
-  max_etf:        2    # max simultaneous ETF positions (high overlap risk)
+  max_per_sector: 4    # was 3 — expanded for larger watchlist
+  max_etf:        2    # index + sector ETFs have high internal overlap
   sectors:
-    Tech:          [AAPL, MSFT, NVDA, META, GOOGL, AMD, CRM, INTC, U, SYM]
-    Consumer_Disc: [TSLA, AMZN, SNAP]
-    Financial:     [PYPL, SOFI]
-    ETF:           [SPY, QQQ, IWM]
+    tech:             [AAPL, MSFT, NVDA, META, GOOGL, AMD, CRM, INTC, TSLA, AMZN,
+                       ORCL, ADBE, NFLX, AVGO, QCOM, TXN, MU, ARM, SHOP, UBER,
+                       ABNB, PLTR, COIN, RBLX, U]
+    finance:          [JPM, BAC, GS, MS, WFC, C, V, MA, AXP, BLK, SCHW, COF, PYPL, SOFI]
+    healthcare:       [UNH, JNJ, LLY, PFE, ABBV, MRK, TMO, DHR, ABT, AMGN, GILD]
+    consumer:         [WMT, COST, HD, NKE, MCD, SBUX, TGT, LOW, DIS, KO, PEP, SNAP]
+    industrial_energy: [CAT, BA, GE, HON, UPS, XOM, CVX, COP]
+    speculative:      [RIVN, LCID, HOOD, ROKU]
+    ETF:              [XLK, XLF, XLV, XLY, XLP, XLE, XLI, XLRE, XLU, XLB, XLC,
+                       SPY, QQQ, IWM, DIA, VTI, VOO]
 
 # ── Report ────────────────────────────────────────────────────────────────────
 report:

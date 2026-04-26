@@ -15,20 +15,14 @@ import numpy as np
 import pandas as pd
 
 
-# ── Sector mapping (static, GICS-based) ───────────────────────────────────────
-
-SECTOR_MAP: dict[str, list[str]] = {
-    "Tech": ["AAPL", "MSFT", "NVDA", "META", "GOOGL", "AMD", "CRM", "INTC", "U", "SYM"],
-    "Consumer_Disc": ["TSLA", "AMZN", "SNAP"],
-    "Financial": ["PYPL", "SOFI"],
-    "ETF": ["SPY", "QQQ", "IWM"],
-}
-
-SYMBOL_TO_SECTOR: dict[str, str] = {
-    sym: sector
-    for sector, syms in SECTOR_MAP.items()
-    for sym in syms
-}
+def _build_symbol_to_sector(cfg: dict) -> dict[str, str]:
+    """Build symbol→sector lookup from cfg['sector_caps']['sectors']."""
+    sectors = cfg.get("sector_caps", {}).get("sectors", {})
+    return {
+        sym: sector
+        for sector, syms in sectors.items()
+        for sym in (syms or [])
+    }
 
 
 # ── Live-trading helper ────────────────────────────────────────────────────────
@@ -136,13 +130,15 @@ def apply_correlation_filter(
     max_etf: int = sc_cfg["max_etf"]
 
     corr_matrix = _compute_avg_correlation_matrix(prices, oos_start, oos_end, lookback)
+    symbol_to_sector = _build_symbol_to_sector(cfg)
 
     filtered = entries.copy().astype(bool)
     size_mult = pd.DataFrame(1.0, index=entries.index, columns=entries.columns)
     filter_log: list[str] = []
 
     for bar_date, row in entries.iterrows():
-        active = sorted(row[row].index.tolist())  # symbols with signals on this bar
+        mask = row.fillna(False).astype(bool)
+        active = sorted(mask[mask].index.tolist())  # symbols with signals on this bar
         if len(active) < 2:
             continue
 
@@ -151,7 +147,7 @@ def apply_correlation_filter(
         allowed_by_sector: list[str] = []
 
         for sym in active:
-            sector = SYMBOL_TO_SECTOR.get(sym, "Other")
+            sector = symbol_to_sector.get(sym, "Other")
             cap = max_etf if sector == "ETF" else max_per_sector
             count = sector_counts.get(sector, 0)
             if count < cap:
