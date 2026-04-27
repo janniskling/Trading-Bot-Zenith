@@ -85,6 +85,8 @@ watchlist:
     - LCID
     - HOOD
     - ROKU
+    - CLS
+    - CRSP
   sector_etfs:
     - XLK
     - XLF
@@ -182,7 +184,7 @@ sector_caps:
     healthcare:       [UNH, JNJ, LLY, PFE, ABBV, MRK, TMO, DHR, ABT, AMGN, GILD]
     consumer:         [WMT, COST, HD, NKE, MCD, SBUX, TGT, LOW, DIS, KO, PEP, SNAP]
     industrial_energy: [CAT, BA, GE, HON, UPS, XOM, CVX, COP]
-    speculative:      [RIVN, LCID, HOOD, ROKU]
+    speculative:      [RIVN, LCID, HOOD, ROKU, CLS, CRSP]
     ETF:              [XLK, XLF, XLV, XLY, XLP, XLE, XLI, XLRE, XLU, XLB, XLC,
                        SPY, QQQ, IWM, DIA, VTI, VOO]
 

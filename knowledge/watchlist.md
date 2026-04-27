@@ -133,3 +133,19 @@
 **Grund für Beobachtung:** Symbotic Inc — KI-gesteuerte Lagerautomatisierung, Walmart-Partnerschaft, starkes Wachstum  
 **Strategie:** EMA-Crossover auf Daily Chart  
 **Bot notes**: (neu)
+
+---
+
+## Speculative (hohes Risiko / hohes Upside)
+
+### CLS
+**Segment:** Electronics Manufacturing Services  
+**Grund für Beobachtung:** Celestica — profitiert von KI-Infrastruktur-Boom (Server, Networking), starkes Umsatzwachstum, günstige Bewertung  
+**Strategie:** EMA-Crossover auf Daily Chart  
+**Bot notes**: (neu)
+
+### CRSP
+**Segment:** Biotech / Gene Editing  
+**Grund für Beobachtung:** CRISPR Therapeutics — Pionier bei CRISPR-Gentherapie, erstes zugelassenes Produkt (Casgevy), hohe Volatilität  
+**Strategie:** Kleinere Position (max 10%) wegen Biotech-Volatilität, nur bei klarem Signal  
+**Bot notes**: (neu)
