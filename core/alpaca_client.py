@@ -12,6 +12,7 @@ from alpaca.trading.requests import (
     MarketOrderRequest,
     OrderRequest,
 )
+from alpaca.data.enums import DataFeed
 from alpaca.data.historical import StockHistoricalDataClient
 from alpaca.data.requests import StockBarsRequest
 from alpaca.data.timeframe import TimeFrame, TimeFrameUnit
@@ -101,6 +102,7 @@ class AlpacaClient:
             timeframe=tf,
             start=start,
             end=end,
+            feed=DataFeed.IEX,
         )
         bars = self._data.get_stock_bars(req)
         df = bars.df
