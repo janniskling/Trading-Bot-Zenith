@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from datetime import date
 
-import telegram
+import requests
 
 from config.settings import TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID
 from core.alpaca_client import Position, Order
@@ -10,27 +10,22 @@ from core.alpaca_client import Position, Order
 
 MAX_MESSAGE_LEN = 4000
 
+_API_BASE = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}"
+
 
 class TelegramNotifier:
     def __init__(self) -> None:
-        self._bot = telegram.Bot(token=TELEGRAM_BOT_TOKEN)
+        self._chat_id = TELEGRAM_CHAT_ID
 
     def send_message(self, text: str, parse_mode: str = "Markdown") -> None:
-        if len(text) <= MAX_MESSAGE_LEN:
-            self._bot.send_message(
-                chat_id=TELEGRAM_CHAT_ID,
-                text=text,
-                parse_mode=parse_mode,
+        chunks = [text] if len(text) <= MAX_MESSAGE_LEN else _split_message(text, MAX_MESSAGE_LEN)
+        for chunk in chunks:
+            resp = requests.post(
+                f"{_API_BASE}/sendMessage",
+                json={"chat_id": self._chat_id, "text": chunk, "parse_mode": parse_mode},
+                timeout=10,
             )
-        else:
-            # Split at paragraph boundaries
-            chunks = _split_message(text, MAX_MESSAGE_LEN)
-            for chunk in chunks:
-                self._bot.send_message(
-                    chat_id=TELEGRAM_CHAT_ID,
-                    text=chunk,
-                    parse_mode=parse_mode,
-                )
+            resp.raise_for_status()
 
     def send_premarket_brief(self, candidates: list[dict], market_mood: str) -> None:
         today = date.today().strftime("%d.%m.%Y")
