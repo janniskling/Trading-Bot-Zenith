@@ -26,3 +26,8 @@
 | SYM | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.4x avg, RSI 55.3 |
 | AAPL | 65/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, RSI 55.2 |
 | MSFT | 60/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, RSI 63.7 |
+
+## Market Open – Orders
+*15:58 UTC*
+
+Keine Orders platziert.
