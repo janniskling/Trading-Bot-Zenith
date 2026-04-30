@@ -24,3 +24,8 @@
 | PYPL | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.7x avg, RSI 62.6 |
 | SYM | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.9x avg, RSI 50.0 |
 | CLS | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.4x avg, RSI 56.3 |
+
+## Market Open – Orders
+*15:28 UTC*
+
+Keine Orders platziert.
