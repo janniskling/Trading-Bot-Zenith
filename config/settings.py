@@ -25,7 +25,7 @@ DEFAULT_STOP_LOSS_PCT: float = 0.03   # 3% stop-loss
 DEFAULT_TAKE_PROFIT_PCT: float = 0.06 # 6% take-profit (2:1 reward/risk)
 MAX_DAILY_LOSS_PCT: float = 0.05      # Circuit breaker: halt if down 5%
 MAX_DAILY_TRADES: int = 5             # Max buys + sells combined per day
-MIN_AVG_DAILY_VOLUME: int = 500_000   # Minimum liquidity filter
+MIN_AVG_DAILY_VOLUME: int = 20_000    # IEX feed = ~2-3% of real volume; 20K IEX ≈ 1M total
 
 # --- Capital Deployment Ramp ---
 MIN_CASH_TARGET_PCT: float = 0.20     # Target: keep ≤ 20% cash idle

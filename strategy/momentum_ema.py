@@ -49,7 +49,7 @@ class MomentumEMAStrategy(BaseStrategy):
         score = 0
 
         # 1. EMA-9 crossed above EMA-21
-        crossover = detect_ema_crossover(df["ema_9"], df["ema_21"], lookback=3)
+        crossover = detect_ema_crossover(df["ema_9"], df["ema_21"], lookback=15)
         if crossover != "bullish":
             return None
         reasons.append("EMA9 > EMA21 crossover")
@@ -110,7 +110,7 @@ class MomentumEMAStrategy(BaseStrategy):
         last = df.iloc[-1]
 
         # EMA bearish crossover
-        crossover = detect_ema_crossover(df["ema_9"], df["ema_21"], lookback=3)
+        crossover = detect_ema_crossover(df["ema_9"], df["ema_21"], lookback=15)
         if crossover == "bearish":
             return ExitSignal(symbol=symbol, reason="EMA9 crossed below EMA21")
 
@@ -136,7 +136,7 @@ class MomentumEMAStrategy(BaseStrategy):
             signals_met: list[str] = []
             score = 0
 
-            crossover = detect_ema_crossover(df["ema_9"], df["ema_21"], lookback=3)
+            crossover = detect_ema_crossover(df["ema_9"], df["ema_21"], lookback=15)
             if crossover == "bullish":
                 signals_met.append("EMA bullish crossover")
                 score += 35
