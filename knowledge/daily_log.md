@@ -28,3 +28,8 @@
 | TSLA | 80/100 | watch_for_entry | EMA bullish crossover, Above EMA50, RSI 56.2 |
 | SYM | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.4x avg, RSI 53.4 |
 | META | 75/100 | watch_for_entry | EMA bullish crossover, Volume 1.2x avg, RSI 40.6 |
+
+## Market Open – Orders
+*15:32 UTC*
+
+Keine Orders platziert.
