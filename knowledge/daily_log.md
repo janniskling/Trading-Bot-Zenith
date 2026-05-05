@@ -24,3 +24,9 @@
 | AMD | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.5x avg, RSI 69.9 |
 | PYPL | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 2.0x avg, RSI 59.1 |
 | AAPL | 65/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, RSI 61.9 |
+
+## Midday Check
+*17:58 UTC*
+
+Positionen geprüft: 0
+Aktionen: 0
