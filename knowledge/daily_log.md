@@ -28,3 +28,8 @@
 | SNAP | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.6x avg, RSI 61.3 |
 | U | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.9x avg, RSI 63.7 |
 | SYM | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 2.6x avg, RSI 58.4 |
+
+## Market Open – Orders
+*15:52 UTC*
+
+Keine Orders platziert.
