@@ -48,12 +48,16 @@ class MomentumEMAStrategy(BaseStrategy):
         reasons = []
         score = 0
 
-        # 1. EMA-9 crossed above EMA-21
-        crossover = detect_ema_crossover(df["ema_9"], df["ema_21"], lookback=15)
-        if crossover != "bullish":
+        # 1. EMA alignment: EMA-9 must be above EMA-21
+        if last["ema_9"] <= last["ema_21"]:
             return None
-        reasons.append("EMA9 > EMA21 crossover")
-        score += 35
+        crossover = detect_ema_crossover(df["ema_9"], df["ema_21"], lookback=15)
+        if crossover == "bullish":
+            reasons.append("EMA9 > EMA21 fresh crossover")
+            score += 35
+        else:
+            reasons.append("EMA9 > EMA21 aligned")
+            score += 15
 
         # 2. Price above EMA-50 (trend filter)
         if last["close"] <= last["ema_50"]:
