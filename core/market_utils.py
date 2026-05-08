@@ -64,6 +64,7 @@ def count_trading_days_since(start_date_iso: str) -> int:
     if not start_date_iso:
         return 0
     try:
+        from datetime import timedelta
         start = date.fromisoformat(start_date_iso)
         today = date.today()
         if today <= start:
@@ -73,8 +74,7 @@ def count_trading_days_since(start_date_iso: str) -> int:
         while current < today:
             if current.weekday() < 5:
                 count += 1
-            current = date(current.year, current.month, current.day + 1) \
-                if current.day < 28 else _next_day(current)
+            current = current + timedelta(days=1)
         return count
     except Exception:
         return 0

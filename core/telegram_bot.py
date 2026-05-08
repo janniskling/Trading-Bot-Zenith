@@ -20,12 +20,15 @@ class TelegramNotifier:
     def send_message(self, text: str, parse_mode: str = "Markdown") -> None:
         chunks = [text] if len(text) <= MAX_MESSAGE_LEN else _split_message(text, MAX_MESSAGE_LEN)
         for chunk in chunks:
-            resp = requests.post(
-                f"{_API_BASE}/sendMessage",
-                json={"chat_id": self._chat_id, "text": chunk, "parse_mode": parse_mode},
-                timeout=10,
-            )
-            resp.raise_for_status()
+            try:
+                resp = requests.post(
+                    f"{_API_BASE}/sendMessage",
+                    json={"chat_id": self._chat_id, "text": chunk, "parse_mode": parse_mode},
+                    timeout=10,
+                )
+                resp.raise_for_status()
+            except Exception as e:
+                print(f"Telegram send_message failed: {e}")
 
     def send_premarket_brief(self, candidates: list[dict], market_mood: str) -> None:
         today = date.today().strftime("%d.%m.%Y")

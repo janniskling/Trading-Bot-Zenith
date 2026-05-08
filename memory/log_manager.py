@@ -128,7 +128,7 @@ class LogManager:
             new_content = re.sub(pattern, replacement, content, flags=re.IGNORECASE)
             if new_content == content:
                 # Symbol section exists but no bot note line — find section and add
-                section_pattern = rf"(### {symbol}.*?\n)"
+                section_pattern = rf"(### {re.escape(symbol)}.*?\n)"
                 content = re.sub(
                     section_pattern,
                     f"\\1**Bot notes**: ({today}) {note}\n",

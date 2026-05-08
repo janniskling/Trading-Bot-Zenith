@@ -4,16 +4,23 @@ import os
 
 load_dotenv()
 
+def _require_env(key: str) -> str:
+    val = os.getenv(key)
+    if not val:
+        raise EnvironmentError(f"Required environment variable '{key}' is not set. Check your .env file or GitHub secrets.")
+    return val
+
+
 # --- API Keys ---
-ALPACA_API_KEY: str = os.environ["ALPACA_API_KEY"]
-ALPACA_SECRET_KEY: str = os.environ["ALPACA_SECRET_KEY"]
+ALPACA_API_KEY: str = _require_env("ALPACA_API_KEY")
+ALPACA_SECRET_KEY: str = _require_env("ALPACA_SECRET_KEY")
 ALPACA_BASE_URL: str = os.getenv("ALPACA_BASE_URL", "https://paper-api.alpaca.markets")
 
-GEMINI_API_KEY: str = os.environ["GEMINI_API_KEY"]
+GEMINI_API_KEY: str = _require_env("GEMINI_API_KEY")
 GEMINI_MODEL: str = "gemini-2.0-flash"
 
-TELEGRAM_BOT_TOKEN: str = os.environ["TELEGRAM_BOT_TOKEN"]
-TELEGRAM_CHAT_ID: str = os.environ["TELEGRAM_CHAT_ID"]
+TELEGRAM_BOT_TOKEN: str = _require_env("TELEGRAM_BOT_TOKEN")
+TELEGRAM_CHAT_ID: str = _require_env("TELEGRAM_CHAT_ID")
 
 # --- Mode ---
 DRY_RUN: bool = os.getenv("DRY_RUN", "false").lower() == "true"

@@ -52,8 +52,8 @@ def fetch_rss_headlines(symbols: list[str], max_per_symbol: int = 3) -> list[New
                             published=published,
                         ))
                         break
-        except Exception:
-            pass
+        except Exception as e:
+            print(f"RSS feed {source_name} failed: {e}")
     return items
 
 
@@ -74,8 +74,8 @@ def fetch_earnings_calendar(symbols: list[str]) -> list[EarningsEvent]:
                     if isinstance(ed, date) and ed >= today:
                         days_away = (ed - today).days
                         events.append(EarningsEvent(symbol=sym, earnings_date=ed, days_away=days_away))
-        except Exception:
-            pass
+        except Exception as e:
+            print(f"Earnings calendar fetch for {sym} failed: {e}")
     return events
 
 

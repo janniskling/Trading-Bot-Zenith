@@ -230,7 +230,8 @@ class AlpacaClient:
                 }
                 for a in today_fills
             ]
-        except Exception:
+        except Exception as e:
+            print(f"get_daily_activity failed: {e}")
             return []
 
     def get_position_entry_date(self, symbol: str) -> date | None:
@@ -243,7 +244,8 @@ class AlpacaClient:
                 return None
             latest = max(filled, key=lambda o: o.filled_at)
             return latest.filled_at.date()
-        except Exception:
+        except Exception as e:
+            print(f"get_position_entry_date({symbol}) failed: {e}")
             return None
 
     def wait_for_market_open(self, max_wait_seconds: int = 300) -> bool:

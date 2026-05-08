@@ -46,7 +46,7 @@ class PortfolioManager:
 
         # Approximate day P&L from account (alpaca provides last_equity)
         day_pnl = unrealized_total  # simplified; full impl would use portfolio history
-        day_pnl_pct = (day_pnl / (equity - day_pnl)) * 100 if (equity - day_pnl) != 0 else 0
+        day_pnl_pct = (day_pnl / equity) * 100 if equity != 0 else 0
 
         return PortfolioState(
             equity=equity,
@@ -85,7 +85,7 @@ class PortfolioManager:
         shares_by_cap = int(max_value / entry_price)
 
         qty = min(shares_by_risk, shares_by_cap)
-        return max(1, qty)
+        return max(0, qty)
 
     def get_stop_price(self, entry_price: float, atr_stop: float = 0.0) -> float:
         if atr_stop > 0 and atr_stop < entry_price:
