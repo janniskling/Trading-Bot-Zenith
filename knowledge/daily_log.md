@@ -22,3 +22,8 @@
 | U | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 2.5x avg, RSI 59.8 |
 | CLS | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.5x avg, RSI 53.2 |
 | NVDA | 65/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, RSI 63.4 |
+
+## Market Open – Orders
+*15:12 UTC*
+
+Keine Orders platziert.
