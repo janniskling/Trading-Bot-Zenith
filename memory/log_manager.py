@@ -151,8 +151,10 @@ class LogManager:
             elif line.startswith("## ") and in_premarket:
                 break
             if in_premarket:
-                m = re.findall(r"\b([A-Z]{2,5})\b", line)
+                m = re.findall(r"\b([A-Z]{1,5})\b", line)
                 symbols.extend(m)
-        # Filter known non-tickers
-        skip = {"BUY", "SELL", "RSI", "EMA", "SL", "TP", "UTC", "ETF", "MA"}
+        # Filter known non-tickers (includes single-letter words common in prose)
+        skip = {"BUY", "SELL", "RSI", "EMA", "SL", "TP", "UTC", "ETF", "MA",
+                "A", "I", "S", "Q", "P", "N", "M", "K", "J", "H", "G", "F",
+                "E", "D", "C", "B", "OR", "IN", "OF", "TO", "AT", "VS", "AI"}
         return [s for s in dict.fromkeys(symbols) if s not in skip]
