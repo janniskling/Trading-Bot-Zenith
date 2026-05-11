@@ -31,7 +31,12 @@ class MomentumEMAStrategy(BaseStrategy):
 
     def _get_indicators(self, symbol: str) -> pd.DataFrame | None:
         try:
-            bars = self._client.get_bars(symbol, "1Day", limit=80)
+            bars = self._client.get_bars(symbol, "1Day", limit=82)
+            # Drop today's incomplete bar during market hours to avoid low partial-day volume
+            import pandas as pd
+            today = pd.Timestamp.now(tz="UTC").normalize()
+            if len(bars) > 0 and bars.index[-1] >= today:
+                bars = bars.iloc[:-1]
             if len(bars) < MIN_BARS_REQUIRED:
                 return None
             return add_indicators(bars)
