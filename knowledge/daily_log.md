@@ -26,3 +26,8 @@
 | NVDA | 60/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, RSI 67.6 |
 | TSLA | 60/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, RSI 64.7 |
 | AMZN | 60/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, RSI 74.8 |
+
+## Market Open – Orders
+*16:16 UTC*
+
+Keine Orders platziert.
