@@ -6,7 +6,7 @@ from datetime import date, datetime, timedelta, timezone
 
 import pandas as pd
 from alpaca.trading.client import TradingClient
-from alpaca.trading.enums import AssetClass, OrderClass, OrderSide, TimeInForce
+from alpaca.trading.enums import AssetClass, OrderClass, OrderSide, OrderType, TimeInForce
 from alpaca.trading.requests import (
     GetOrdersRequest,
     LimitOrderRequest,
@@ -138,6 +138,7 @@ class AlpacaClient:
             symbol=symbol,
             qty=qty,
             side=OrderSide.BUY,
+            type=OrderType.LIMIT,
             time_in_force=TimeInForce.DAY,
             limit_price=round(entry_price, 2),
             order_class=OrderClass.BRACKET,
