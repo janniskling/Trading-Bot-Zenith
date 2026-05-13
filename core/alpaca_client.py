@@ -6,11 +6,13 @@ from datetime import date, datetime, timedelta, timezone
 
 import pandas as pd
 from alpaca.trading.client import TradingClient
-from alpaca.trading.enums import AssetClass, OrderSide, OrderType, TimeInForce
+from alpaca.trading.enums import AssetClass, OrderClass, OrderSide, TimeInForce
 from alpaca.trading.requests import (
     GetOrdersRequest,
+    LimitOrderRequest,
     MarketOrderRequest,
-    OrderRequest,
+    StopLossRequest,
+    TakeProfitRequest,
 )
 from alpaca.data.enums import DataFeed
 from alpaca.data.historical import StockHistoricalDataClient
@@ -132,16 +134,15 @@ class AlpacaClient:
         if asset.asset_class != AssetClass.US_EQUITY:
             raise ValueError(f"{symbol} is not a US equity — options not allowed")
 
-        req = OrderRequest(
+        req = LimitOrderRequest(
             symbol=symbol,
             qty=qty,
             side=OrderSide.BUY,
-            type=OrderType.LIMIT,
             time_in_force=TimeInForce.DAY,
             limit_price=round(entry_price, 2),
-            order_class="bracket",
-            stop_loss={"stop_price": round(stop_loss, 2)},
-            take_profit={"limit_price": round(take_profit, 2)},
+            order_class=OrderClass.BRACKET,
+            stop_loss=StopLossRequest(stop_price=round(stop_loss, 2)),
+            take_profit=TakeProfitRequest(limit_price=round(take_profit, 2)),
         )
         order = self._trading.submit_order(req)
         return Order(
