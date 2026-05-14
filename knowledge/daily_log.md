@@ -34,3 +34,9 @@ BUY 50x **AAPL** @ 298.95 | SL: 289.55 | TP: 317.75 | Score: 90/100
 BUY 66x **NVDA** @ 225.91 | SL: 215.60 | TP: 246.53 | Score: 90/100
 BUY 33x **TSLA** @ 445.32 | SL: 419.53 | TP: 496.92 | Score: 90/100
 BUY 55x **AMZN** @ 270.14 | SL: 259.93 | TP: 290.57 | Score: 90/100
+
+## Midday Check
+*18:15 UTC*
+
+Positionen geprüft: 6
+Aktionen: 0
