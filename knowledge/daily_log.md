@@ -1,97 +1,25 @@
-# Daily Log – 2026-05-14
+# Daily Log – 2026-05-15
 
 
 ## Pre-Market Research
-*12:23 UTC*
+*12:29 UTC*
 
-**Marktstimmung:** Neutral (SPY -0.2%, QQQ -0.5%)
-**Futures:** SPY: -0.2% | QQQ: -0.5%
-⚡ **Kapitaldeployment-Priorität aktiv** – Cash > 20%
+**Marktstimmung:** Neutral (SPY +0.1%, QQQ +0.0%)
+**Futures:** SPY: +0.1% | QQQ: +0.0%
 
 **News-Zusammenfassung:**
 **U:**
-  - [yahoo_finance] Explained: What is a perpetual DEX? A Wall Street primer featuring Decibel
-  - [yahoo_finance] Trump’s new Moms.gov site promotes Trump Accounts for kids — but are they the smartest savings option you have?
-  - [yahoo_finance] Dollar lifted by growing odds of Fed rate hikes; Trump-Xi summit under way
+  - [yahoo_finance] ICL Group Ltd Q1 2026 Earnings Call Summary
+  - [yahoo_finance] SenesTech, Inc. Q1 2026 Earnings Call Summary
+  - [yahoo_finance] The Beachbody Company, Inc. Q1 2026 Earnings Call Summary
 **META:**
-  - [yahoo_finance] Wheaton Precious Metals (WPM): Best Canadian Gold Stocks to Buy
+  - [yahoo_finance] The Metals Company (TMC), Allseas Sign Agreement for Commercial Nodule Recovery System
 
 **Top-Kandidaten:**
 | Symbol | Score | Aktion | Grund |
 |--------|-------|--------|-------|
-| AAPL | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.9x avg, RSI 75.8 |
-| NVDA | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.7x avg, RSI 72.2 |
-| TSLA | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.1x avg, RSI 70.2 |
-| AMZN | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.3x avg, RSI 67.4 |
-| SPY | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.8x avg, RSI 76.5 |
-
-## Market Open – Orders
-*15:57 UTC*
-
-BUY 20x **SPY** @ 742.30 | SL: 731.03 | TP: 764.84 | Score: 90/100
-BUY 105x **WPM** @ 142.24 | SL: 133.61 | TP: 159.50 | Score: 90/100
-BUY 50x **AAPL** @ 298.95 | SL: 289.55 | TP: 317.75 | Score: 90/100
-BUY 66x **NVDA** @ 225.91 | SL: 215.60 | TP: 246.53 | Score: 90/100
-BUY 33x **TSLA** @ 445.32 | SL: 419.53 | TP: 496.92 | Score: 90/100
-BUY 55x **AMZN** @ 270.14 | SL: 259.93 | TP: 290.57 | Score: 90/100
-
-## Midday Check
-*18:15 UTC*
-
-Positionen geprüft: 6
-Aktionen: 0
-
-## Nightly Reflection
-*21:59 UTC*
-
-**1 neue Lernerkenntnisse**
-
-**Neue Erkenntnisse:**
-- Reflection error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
-* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
-* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
-* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
-Please retry in 2.103888672s. [links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-}
-violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-}
-violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count"
-  quota_id: "GenerateContentInputTokensPerModelPerMinute-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-}
-, retry_delay {
-  seconds: 2
-}
-]
+| AAPL | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.7x avg, RSI 74.6 |
+| MSFT | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.9x avg, RSI 50.4 |
+| NVDA | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.0x avg, RSI 76.7 |
+| TSLA | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.8x avg, RSI 69.0 |
+| AMZN | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.9x avg, RSI 62.9 |
