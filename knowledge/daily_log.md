@@ -29,3 +29,10 @@
 
 BUY 1627x **TMC** @ 5.69 | SL: 5.08 | TP: 6.91 | Score: 90/100
 BUY 63x **NVDA** @ 235.78 | SL: 225.07 | TP: 257.20 | Score: 90/100
+
+## Midday Check
+*18:00 UTC*
+
+Positionen geprüft: 8
+Aktionen: 1
+CLOSED WPM – Price below EMA50 trend support
