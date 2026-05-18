@@ -24,3 +24,12 @@
 | NVDA | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.9x avg, RSI 64.6 |
 | TSLA | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.9x avg, RSI 58.0 |
 | AMZN | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.0x avg, RSI 58.7 |
+
+## Market Open – Orders
+*16:39 UTC*
+
+BUY 19x **SPY** @ 739.10 | SL: 727.58 | TP: 762.14 | Score: 90/100
+BUY 20x **QQQ** @ 708.91 | SL: 693.06 | TP: 740.61 | Score: 90/100
+BUY 14x **MU** @ 724.09 | SL: 656.22 | TP: 859.83 | Score: 90/100
+BUY 37x **GOOG** @ 393.21 | SL: 379.34 | TP: 420.95 | Score: 90/100
+BUY 64x **NVDA** @ 225.31 | SL: 214.13 | TP: 247.66 | Score: 90/100
