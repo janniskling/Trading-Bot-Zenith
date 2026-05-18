@@ -33,3 +33,9 @@ BUY 20x **QQQ** @ 708.91 | SL: 693.06 | TP: 740.61 | Score: 90/100
 BUY 14x **MU** @ 724.09 | SL: 656.22 | TP: 859.83 | Score: 90/100
 BUY 37x **GOOG** @ 393.21 | SL: 379.34 | TP: 420.95 | Score: 90/100
 BUY 64x **NVDA** @ 225.31 | SL: 214.13 | TP: 247.66 | Score: 90/100
+
+## Midday Check
+*18:18 UTC*
+
+Positionen geprüft: 10
+Aktionen: 0
