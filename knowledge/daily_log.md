@@ -23,3 +23,8 @@
 | TSLA | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.7x avg, RSI 63.7 |
 | AMZN | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.8x avg, RSI 64.5 |
 | SPY | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.9x avg, RSI 73.6 |
+
+## Market Open – Orders
+*16:58 UTC*
+
+Keine Orders platziert.
