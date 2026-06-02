@@ -28,3 +28,8 @@
 | MSFT | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.9x avg, RSI 73.0 |
 | NVDA | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.5x avg, RSI 60.5 |
 | TSLA | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.8x avg, RSI 50.3 |
+
+## Market Open – Orders
+*17:53 UTC*
+
+Keine Orders platziert.
