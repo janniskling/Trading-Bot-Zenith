@@ -25,3 +25,8 @@
 | AMD | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.2x avg, RSI 58.4 |
 | INTC | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.8x avg, RSI 60.6 |
 | SOFI | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.2x avg, RSI 53.0 |
+
+## Market Open – Orders
+*15:40 UTC*
+
+Keine Orders platziert.
