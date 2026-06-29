@@ -21,3 +21,8 @@
 | SOFI | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.8x avg, RSI 57.3 |
 | CRSP | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.4x avg, RSI 56.8 |
 | QQQ | 65/100 | watch_for_entry | Above EMA50, Volume 0.7x avg, RSI 46.2 |
+
+## Market Open – Orders
+*16:45 UTC*
+
+Keine Orders platziert.
