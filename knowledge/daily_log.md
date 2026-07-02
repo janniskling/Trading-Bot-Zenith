@@ -21,3 +21,8 @@
 | QQQ | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.6x avg, RSI 52.5 |
 | IWM | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.6x avg, RSI 61.2 |
 | AMD | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.3x avg, RSI 56.5 |
+
+## Market Open – Orders
+*15:53 UTC*
+
+Keine Orders platziert.
