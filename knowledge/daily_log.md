@@ -23,3 +23,8 @@
 | SOFI | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 0.9x avg, RSI 61.3 |
 | CRSP | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 0.9x avg, RSI 69.5 |
 | AAPL | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.6x avg, RSI 63.2 |
+
+## Market Open – Orders
+*16:04 UTC*
+
+Keine Orders platziert.
