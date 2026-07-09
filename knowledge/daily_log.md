@@ -23,3 +23,8 @@
 | PYPL | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 0.6x avg, RSI 53.6 |
 | CRSP | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 0.7x avg, RSI 60.9 |
 | SPY | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.6x avg, RSI 53.0 |
+
+## Market Open – Orders
+*16:12 UTC*
+
+Keine Orders platziert.
