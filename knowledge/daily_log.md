@@ -23,3 +23,8 @@
 | META | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 1.7x avg, RSI 60.0 |
 | CRSP | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 0.6x avg, RSI 52.6 |
 | SPY | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.8x avg, RSI 57.3 |
+
+## Market Open – Orders
+*15:57 UTC*
+
+Keine Orders platziert.
