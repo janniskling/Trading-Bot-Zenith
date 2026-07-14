@@ -21,3 +21,8 @@
 | META | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 1.4x avg, RSI 62.8 |
 | PYPL | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 1.6x avg, RSI 65.8 |
 | U | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 1.0x avg, RSI 61.5 |
+
+## Market Open – Orders
+*15:08 UTC*
+
+Keine Orders platziert.
