@@ -23,3 +23,8 @@
 | AMZN | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 0.8x avg, RSI 60.3 |
 | META | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 1.4x avg, RSI 66.8 |
 | GOOGL | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 1.0x avg, RSI 56.9 |
+
+## Market Open – Orders
+*15:18 UTC*
+
+Keine Orders platziert.
