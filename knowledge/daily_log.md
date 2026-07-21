@@ -25,3 +25,8 @@
 | AMZN | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 0.8x avg, RSI 54.1 |
 | SPY | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 0.9x avg, RSI 47.6 |
 | CRM | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 1.3x avg, RSI 56.7 |
+
+## Market Open – Orders
+*15:23 UTC*
+
+Keine Orders platziert.
