@@ -26,3 +26,8 @@
 | NVDA | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 0.7x avg, RSI 52.2 |
 | SPY | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 0.8x avg, RSI 52.5 |
 | PYPL | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 0.7x avg, RSI 76.0 |
+
+## Market Open – Orders
+*15:21 UTC*
+
+Keine Orders platziert.
