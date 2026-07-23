@@ -25,3 +25,8 @@
 | SPY | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 0.8x avg, RSI 51.9 |
 | META | 80/100 | watch_for_entry | EMA bullish crossover, Above EMA50, RSI 51.6 |
 | AMD | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.0x avg, RSI 56.0 |
+
+## Market Open – Orders
+*15:33 UTC*
+
+Keine Orders platziert.
