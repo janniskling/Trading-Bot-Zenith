@@ -26,3 +26,8 @@
 | AMD | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.0x avg, RSI 50.1 |
 | PYPL | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.7x avg, RSI 75.4 |
 | U | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.6x avg, RSI 46.3 |
+
+## Market Open – Orders
+*16:00 UTC*
+
+Keine Orders platziert.
