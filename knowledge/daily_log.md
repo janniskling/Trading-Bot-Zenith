@@ -27,3 +27,8 @@
 | U | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.9x avg, RSI 62.5 |
 | MSFT | 75/100 | watch_for_entry | EMA bullish crossover, Volume 1.3x avg, RSI 50.3 |
 | PYPL | 60/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.1x avg |
+
+## Market Open – Orders
+*15:33 UTC*
+
+Keine Orders platziert.
