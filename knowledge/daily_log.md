@@ -26,3 +26,8 @@
 | MSFT | 80/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 1.6x avg |
 | AMZN | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.8x avg, RSI 72.4 |
 | SPY | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.3x avg, RSI 59.7 |
+
+## Market Open – Orders
+*15:57 UTC*
+
+Keine Orders platziert.
