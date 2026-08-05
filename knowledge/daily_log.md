@@ -25,3 +25,8 @@
 | SYM | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 1.4x avg, RSI 62.1 |
 | CLS | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 1.3x avg, RSI 56.3 |
 | MSFT | 80/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 1.0x avg |
+
+## Market Open – Orders
+*15:40 UTC*
+
+Keine Orders platziert.
