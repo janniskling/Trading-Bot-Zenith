@@ -1,110 +1,25 @@
-# Daily Log – 2026-08-06
+# Daily Log – 2026-08-07
 
 
 ## Pre-Market Research
-*12:53 UTC*
+*11:40 UTC*
 
-**Marktstimmung:** Bearish (SPY -0.4%, QQQ -0.8%)
-**Futures:** SPY: -0.4% | QQQ: -0.8%
+**Marktstimmung:** Neutral (SPY -0.1%, QQQ -0.3%)
+**Futures:** SPY: -0.1% | QQQ: -0.3%
 
 **News-Zusammenfassung:**
 **U:**
-  - [yahoo_finance] Mud Jeans files bankruptcy after failing to overcome debt burden
-  - [yahoo_finance] Stock market today: Nasdaq futures slip, Dow and S&P 500 futures inch up as earnings roll on
-  - [yahoo_finance] Why the Sandisk earnings sell-off looks absurd
-**CRM:**
-  - [yahoo_finance] Salesforce (CRM) Declined as Market Questions SaaS Resilience
-**SNAP:**
-  - [seeking_alpha] Earnings Snapshot: Novavax beats Q2 top and bottom line estimates; raises FY26 adjusted total revenue outlook
+  - [yahoo_finance] Here's How to Read Super Group Insider Moves as Shares Slipped 6% After Earnings
+  - [yahoo_finance] Cash Conversion Cycle Warning: Middle-Market Squeeze Revealed
+  - [yahoo_finance] A10 Networks, Inc. Q2 2026 Earnings Call Summary
+**META:**
+  - [seeking_alpha] Alpha Metallurgical GAAP EPS of -$0.96 misses by $1.23, revenue of $492.86M misses by $91.49M
 
 **Top-Kandidaten:**
 | Symbol | Score | Aktion | Grund |
 |--------|-------|--------|-------|
-| SNAP | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 3.0x avg, RSI 60.3 |
-| SYM | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 1.1x avg, RSI 59.1 |
-| MSFT | 80/100 | watch_for_entry | EMA bullish crossover, Above EMA50, RSI 76.3 |
-| NVDA | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.0x avg, RSI 61.5 |
-| AMZN | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.9x avg, RSI 63.5 |
-
-## Market Open – Orders
-*15:56 UTC*
-
-Keine Orders platziert.
-
-## Market Close – Tagesabschluss
-*00:54 UTC*
-
-**Portfolio:** 104,848.66€ (+5.73%)
-**Benchmark (URTH/MSCI World):** -0.25% | **Alpha heute:** +5.97%
-**Cash:** -46,488.95€ (-44.3%)
-**Offene Positionen:** 11
-**Trades heute:** 0/5
-**Unrealisierter P&L:** +6002.72€
-
-**Positionen:**
-  - AAPL: +673.71€ (+4.5%) | 50 Stk @ 298.86
-  - AMZN: +221.10€ (+1.5%) | 55 Stk @ 268.24
-  - GOOG: -1306.84€ (-9.0%) | 37 Stk @ 393.14
-  - MSFT: +3370.68€ (+23.1%) | 36 Stk @ 404.86
-  - MU: +2847.88€ (+29.7%) | 14 Stk @ 685.58
-  - NVDA: -104.96€ (-0.7%) | 64 Stk @ 221.08
-  - QQQ: +262.80€ (+1.9%) | 20 Stk @ 702.04
-  - SPY: +628.71€ (+4.5%) | 19 Stk @ 735.85
-  - TMC: -2312.29€ (-25.4%) | 1627 Stk @ 5.59
-  - TSLA: -4111.33€ (-28.0%) | 33 Stk @ 445.25
-  - U: +5833.26€ (+53.2%) | 414 Stk @ 26.47
-
-## Nightly Reflection
-*00:59 UTC*
-
-**1 neue Lernerkenntnisse**
-
-**Neue Erkenntnisse:**
-- Reflection error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
-* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
-* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
-* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
-Please retry in 45.139256542s. [links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count"
-  quota_id: "GenerateContentInputTokensPerModelPerMinute-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-}
-violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-}
-violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-}
-, retry_delay {
-  seconds: 45
-}
-]
+| QQQ | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 0.8x avg, RSI 54.4 |
+| GOOGL | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 0.7x avg, RSI 52.4 |
+| SNAP | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 0.8x avg, RSI 57.2 |
+| NVDA | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.7x avg, RSI 61.2 |
+| SPY | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.7x avg, RSI 64.0 |
