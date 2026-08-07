@@ -23,3 +23,8 @@
 | SNAP | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 0.8x avg, RSI 57.2 |
 | NVDA | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.7x avg, RSI 61.2 |
 | SPY | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.7x avg, RSI 64.0 |
+
+## Market Open – Orders
+*14:33 UTC*
+
+Keine Orders platziert.
