@@ -32,3 +32,11 @@ Keine Orders platziert.
 
 Positionen geprüft: 11
 Aktionen: 0
+
+## Nightly Reflection
+*21:34 UTC*
+
+**1 neue Lernerkenntnisse**
+
+**Neue Erkenntnisse:**
+- Reflection error: 404 This model models/gemini-2.0-flash is no longer available. Please update your code to use a newer model for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/migrate-to-interactions).
