@@ -21,3 +21,8 @@
 | IWM | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 1.0x avg, RSI 63.5 |
 | CRM | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 0.7x avg, RSI 60.5 |
 | SNAP | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 1.1x avg, RSI 58.8 |
+
+## Market Open – Orders
+*14:02 UTC*
+
+Keine Orders platziert.
