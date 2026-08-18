@@ -23,3 +23,8 @@
 | QQQ | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 0.9x avg, RSI 58.9 |
 | IWM | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 0.9x avg, RSI 61.2 |
 | INTC | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 1.3x avg, RSI 52.2 |
+
+## Market Open – Orders
+*14:07 UTC*
+
+Keine Orders platziert.
