@@ -1,5 +1,8 @@
 # Zenith Trading Learnings
 
+## 2026-08-18
+- Reflection error: 404 This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvements.
+
 ## 2026-08-17
 - Reflection error: 404 This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvements.
 
