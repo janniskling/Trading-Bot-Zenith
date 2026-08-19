@@ -21,3 +21,8 @@
 | SPY | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 1.0x avg, RSI 56.6 |
 | QQQ | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 1.6x avg, RSI 52.3 |
 | IWM | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 1.1x avg, RSI 53.7 |
+
+## Market Open – Orders
+*14:08 UTC*
+
+Keine Orders platziert.
