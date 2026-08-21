@@ -23,3 +23,8 @@
 | QQQ | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 0.8x avg, RSI 48.8 |
 | IWM | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 1.3x avg, RSI 49.0 |
 | SOFI | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 0.8x avg, RSI 51.0 |
+
+## Market Open – Orders
+*14:08 UTC*
+
+Keine Orders platziert.
