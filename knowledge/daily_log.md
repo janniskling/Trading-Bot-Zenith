@@ -69,3 +69,11 @@ Aktionen: 0
   - TMC: -734.10€ (-8.1%) | 1627 Stk @ 5.59
   - TSLA: -2987.68€ (-20.3%) | 33 Stk @ 445.25
   - U: +7075.26€ (+64.6%) | 414 Stk @ 26.47
+
+## Nightly Reflection
+*05:00 UTC*
+
+**1 neue Lernerkenntnisse**
+
+**Neue Erkenntnisse:**
+- Reflection error: 404 This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.
