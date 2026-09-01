@@ -1,36 +1,25 @@
-# Daily Log – 2026-08-31
+# Daily Log – 2026-09-01
 
 
 ## Pre-Market Research
-*17:47 UTC*
+*15:21 UTC*
 
-**Marktstimmung:** Neutral (SPY -0.4%, QQQ -0.1%)
-**Futures:** SPY: -0.4% | QQQ: -0.1%
+**Marktstimmung:** Bearish (SPY -0.6%, QQQ -1.0%)
+**Futures:** SPY: -0.6% | QQQ: -1.0%
 
 **News-Zusammenfassung:**
 **U:**
-  - [yahoo_finance] Goldman Sachs sends blunt message on oil price, economy
-  - [yahoo_finance] Should you automate your savings? Consider these pros and cons first.
-  - [yahoo_finance] Fed Chairman Kevin Warsh warned about inflation — but that's not why long-term rates are surging: Chart of the Day
+  - [yahoo_finance] Firearms retailer files Chapter 11 bankruptcy as gun sales drop
+  - [yahoo_finance] Why you should care about rising bond yields
+  - [yahoo_finance] Tech stocks today: John Ternus becomes Apple CEO as legal battle with OpenAI escalates
+**CRM:**
+  - [yahoo_finance] Agentforce: Scaling the Next Generation of Salesforce (CRM)
 
 **Top-Kandidaten:**
 | Symbol | Score | Aktion | Grund |
 |--------|-------|--------|-------|
-| AAPL | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 0.8x avg, RSI 57.2 |
-| MSFT | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.3x avg, RSI 73.3 |
-| NVDA | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.4x avg, RSI 52.3 |
-| AMZN | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.2x avg, RSI 55.8 |
-| SPY | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.9x avg, RSI 56.6 |
-
-## Market Open – Orders
-*19:35 UTC*
-
-Keine Orders platziert.
-
-## Nightly Reflection
-*00:10 UTC*
-
-**1 neue Lernerkenntnisse**
-
-**Neue Erkenntnisse:**
-- Reflection error: 404 This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.
+| AAPL | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 0.8x avg, RSI 54.4 |
+| TSLA | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 1.5x avg, RSI 58.7 |
+| MSFT | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.7x avg, RSI 68.1 |
+| NVDA | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.8x avg, RSI 54.6 |
+| AMZN | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.1x avg, RSI 50.0 |
