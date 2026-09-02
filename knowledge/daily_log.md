@@ -1,44 +1,25 @@
-# Daily Log – 2026-09-01
+# Daily Log – 2026-09-02
 
 
 ## Pre-Market Research
-*15:21 UTC*
+*14:53 UTC*
 
-**Marktstimmung:** Bearish (SPY -0.6%, QQQ -1.0%)
-**Futures:** SPY: -0.6% | QQQ: -1.0%
+**Marktstimmung:** Neutral (SPY +0.5%, QQQ +0.0%)
+**Futures:** SPY: +0.5% | QQQ: +0.0%
 
 **News-Zusammenfassung:**
 **U:**
-  - [yahoo_finance] Firearms retailer files Chapter 11 bankruptcy as gun sales drop
-  - [yahoo_finance] Why you should care about rising bond yields
-  - [yahoo_finance] Tech stocks today: John Ternus becomes Apple CEO as legal battle with OpenAI escalates
-**CRM:**
-  - [yahoo_finance] Agentforce: Scaling the Next Generation of Salesforce (CRM)
+  - [yahoo_finance] Denny’s rival dining chain files for Chapter 11 bankruptcy
+  - [yahoo_finance] NVIDIA and Equinix Deepen Their AI Inference Partnership. Here’s What It Means for Both Stocks
+  - [yahoo_finance] Where credit card balances are highest, and what it says about a K-shaped economy
+**GOOGL:**
+  - [yahoo_finance] Google defeats US bid to force ad tech sale
 
 **Top-Kandidaten:**
 | Symbol | Score | Aktion | Grund |
 |--------|-------|--------|-------|
-| AAPL | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 0.8x avg, RSI 54.4 |
-| TSLA | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 1.5x avg, RSI 58.7 |
-| MSFT | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.7x avg, RSI 68.1 |
-| NVDA | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.8x avg, RSI 54.6 |
-| AMZN | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.1x avg, RSI 50.0 |
-
-## Market Open – Orders
-*17:25 UTC*
-
-Keine Orders platziert.
-
-## Midday Check
-*19:27 UTC*
-
-Positionen geprüft: 11
-Aktionen: 0
-
-## Nightly Reflection
-*22:53 UTC*
-
-**1 neue Lernerkenntnisse**
-
-**Neue Erkenntnisse:**
-- Reflection error: 404 This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.
+| AAPL | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 1.4x avg, RSI 61.3 |
+| MSFT | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.7x avg, RSI 63.9 |
+| NVDA | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.8x avg, RSI 51.9 |
+| SPY | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.2x avg, RSI 48.4 |
+| SNAP | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.7x avg, RSI 52.0 |
