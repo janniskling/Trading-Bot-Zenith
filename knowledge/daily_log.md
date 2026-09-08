@@ -1,50 +1,23 @@
-# Daily Log – 2026-09-04
+# Daily Log – 2026-09-08
 
 
 ## Pre-Market Research
-*14:41 UTC*
+*14:51 UTC*
 
-**Marktstimmung:** Neutral (SPY -0.2%, QQQ +0.3%)
-**Futures:** SPY: -0.2% | QQQ: +0.3%
+**Marktstimmung:** Neutral (SPY -0.2%, QQQ +0.1%)
+**Futures:** SPY: -0.2% | QQQ: +0.1%
 
 **News-Zusammenfassung:**
 **U:**
-  - [yahoo_finance] Stock market today: Dow, S&P 500, Nasdaq edge lower after hot jobs report fuels Fed rate-hike bets
-  - [yahoo_finance] Qualcomm Lost a Third of Its Value in 3 Months. One Wall Street Pro Sees 140% Upside From Here
-  - [yahoo_finance] Diamond Hill Bets on BioLife Solutions’ (BLFS) High Switching Cost
+  - [yahoo_finance] Loss of Costco deal helps push beverage brand into Chapter 11
+  - [yahoo_finance] Micron Technology (MU) Rose on Elevated Demand for High-Bandwidth Memory
+  - [yahoo_finance] Social Security benefits in 2027: See what's really changing
 
 **Top-Kandidaten:**
 | Symbol | Score | Aktion | Grund |
 |--------|-------|--------|-------|
-| AAPL | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 0.9x avg, RSI 63.5 |
-| TSLA | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 1.5x avg, RSI 60.5 |
-| META | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 1.3x avg, RSI 60.7 |
-| MSFT | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.4x avg, RSI 66.1 |
-| NVDA | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.9x avg, RSI 59.2 |
-
-## Market Open – Orders
-*16:59 UTC*
-
-Keine Orders platziert.
-
-## Midday Check
-*19:02 UTC*
-
-Positionen geprüft: 11
-Aktionen: 0
-
-## Nightly Reflection
-*22:36 UTC*
-
-**1 neue Lernerkenntnisse**
-
-**Neue Erkenntnisse:**
-- Reflection error: 404 This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.
-
-## Nightly Reflection
-*23:07 UTC*
-
-**1 neue Lernerkenntnisse**
-
-**Neue Erkenntnisse:**
-- Reflection error: 404 This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.
+| AAPL | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 1.0x avg, RSI 53.8 |
+| META | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 0.9x avg, RSI 62.4 |
+| MSFT | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.9x avg, RSI 59.3 |
+| NVDA | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.9x avg, RSI 60.2 |
+| SPY | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.8x avg, RSI 55.6 |
