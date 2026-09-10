@@ -21,3 +21,8 @@
 | META | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 2.2x avg, RSI 70.4 |
 | AMD | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 1.5x avg, RSI 60.3 |
 | INTC | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 0.8x avg, RSI 63.4 |
+
+## Market Open – Orders
+*17:07 UTC*
+
+Keine Orders platziert.
