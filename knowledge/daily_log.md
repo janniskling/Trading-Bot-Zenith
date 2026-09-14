@@ -29,3 +29,11 @@
 *18:49 UTC*
 
 Keine Orders platziert.
+
+## Nightly Reflection
+*23:33 UTC*
+
+**1 neue Lernerkenntnisse**
+
+**Neue Erkenntnisse:**
+- Reflection error: 404 This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.
