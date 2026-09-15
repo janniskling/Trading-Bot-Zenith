@@ -1,39 +1,25 @@
-# Daily Log – 2026-09-14
+# Daily Log – 2026-09-15
 
 
 ## Pre-Market Research
-*16:44 UTC*
+*15:23 UTC*
 
-**Marktstimmung:** Neutral (SPY -0.3%, QQQ -0.6%)
-**Futures:** SPY: -0.3% | QQQ: -0.6%
+**Marktstimmung:** Bearish (SPY -0.5%, QQQ -0.6%)
+**Futures:** SPY: -0.5% | QQQ: -0.6%
 
 **News-Zusammenfassung:**
 **U:**
-  - [yahoo_finance] Tech stocks today: AI warnings send shock through chip stocks
   - [yahoo_finance] Another coffeehouse files for Chapter 11 as costs, prices rise
-  - [yahoo_finance] Stocks could have a tough road ahead if the Fed hikes rates: Chart of the Day
+  - [yahoo_finance] Tech stocks today: CEOs call for pacing AI, as Nvidia CEO says extinction fears are made up
+  - [yahoo_finance] Better Pricing for Ride-Hailing Worldwide: inDrive CEO & Founder Arsen Tomsky, Live at Nasdaq
 **META:**
-  - [yahoo_finance] Producer Of Strategic Metal Soars 43% On Pentagon Deals
-  - [seeking_alpha] Rheinmetall poised to gain from Germany’s 4th intelligence ship order
+  - [yahoo_finance] Meta launches Meta One subscriptions as it seeks to better monetize AI spending
 
 **Top-Kandidaten:**
 | Symbol | Score | Aktion | Grund |
 |--------|-------|--------|-------|
-| AAPL | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 1.2x avg, RSI 62.9 |
-| TSLA | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 0.7x avg, RSI 54.5 |
-| META | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 0.7x avg, RSI 67.3 |
-| AMD | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 1.1x avg, RSI 57.9 |
-| INTC | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 0.8x avg, RSI 57.5 |
-
-## Market Open – Orders
-*18:49 UTC*
-
-Keine Orders platziert.
-
-## Nightly Reflection
-*23:33 UTC*
-
-**1 neue Lernerkenntnisse**
-
-**Neue Erkenntnisse:**
-- Reflection error: 404 This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.
+| AAPL | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 1.0x avg, RSI 63.3 |
+| META | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 1.1x avg, RSI 70.9 |
+| AMD | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 1.7x avg, RSI 51.5 |
+| MSFT | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.5x avg, RSI 61.5 |
+| CRM | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.7x avg, RSI 69.8 |
