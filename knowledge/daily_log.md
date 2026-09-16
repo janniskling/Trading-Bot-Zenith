@@ -23,3 +23,8 @@
 | AMD | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 0.9x avg, RSI 54.1 |
 | SYM | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 1.3x avg, RSI 54.0 |
 | MSFT | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.3x avg, RSI 55.8 |
+
+## Market Open – Orders
+*17:42 UTC*
+
+Keine Orders platziert.
