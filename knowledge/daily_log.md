@@ -39,3 +39,9 @@
 *17:44 UTC*
 
 Keine Orders platziert.
+
+## Midday Check
+*19:48 UTC*
+
+Positionen geprüft: 11
+Aktionen: 0
