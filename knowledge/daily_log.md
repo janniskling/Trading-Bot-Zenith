@@ -29,3 +29,8 @@
 | INTC | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 0.7x avg, RSI 70.4 |
 | SYM | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 1.0x avg, RSI 54.0 |
 | CLS | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 1.2x avg, RSI 62.1 |
+
+## Market Open – Orders
+*17:55 UTC*
+
+Keine Orders platziert.
