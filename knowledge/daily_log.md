@@ -30,3 +30,8 @@
 | CLS | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 0.8x avg, RSI 60.6 |
 | AAPL | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.0x avg, RSI 51.0 |
 | MSFT | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.9x avg, RSI 58.2 |
+
+## Market Open – Orders
+*18:31 UTC*
+
+Keine Orders platziert.
