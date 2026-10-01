@@ -1,11 +1,11 @@
-# Daily Log – 2026-09-30
+# Daily Log – 2026-10-01
 
 
 ## Pre-Market Research
-*16:37 UTC*
+*17:13 UTC*
 
-**Marktstimmung:** Neutral (SPY +0.2%, QQQ +0.4%)
-**Futures:** SPY: +0.2% | QQQ: +0.4%
+**Marktstimmung:** Neutral (SPY -0.5%, QQQ -0.4%)
+**Futures:** SPY: -0.5% | QQQ: -0.4%
 
 **News-Zusammenfassung:**
 **U:**
@@ -19,27 +19,13 @@
   - [yahoo_finance] Intel (INTC) Could Get a Fresh Valuation for Altera. AMD (AMD) Is the Rival to Watch
 **META:**
   - [yahoo_finance] Bank of America backs Meta stock after Muse surprise
-**GOOGL:**
-  - [marketwatch] Wall Street may be sleeping on this networking stock tied to Google and OpenAI
+  - [marketwatch] Mark Zuckerberg is coming for Apple’s empire
 
 **Top-Kandidaten:**
 | Symbol | Score | Aktion | Grund |
 |--------|-------|--------|-------|
-| AMD | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 0.6x avg, RSI 65.5 |
-| INTC | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 0.9x avg, RSI 58.5 |
-| CLS | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 0.8x avg, RSI 60.6 |
-| AAPL | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.0x avg, RSI 51.0 |
-| MSFT | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.9x avg, RSI 58.2 |
-
-## Market Open – Orders
-*18:31 UTC*
-
-Keine Orders platziert.
-
-## Nightly Reflection
-*00:14 UTC*
-
-**1 neue Lernerkenntnisse**
-
-**Neue Erkenntnisse:**
-- Reflection error: 404 This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.8-flash for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+| CLS | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 0.7x avg, RSI 58.5 |
+| AAPL | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.2x avg, RSI 54.5 |
+| MSFT | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.4x avg, RSI 60.2 |
+| NVDA | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.1x avg, RSI 57.7 |
+| SPY | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.0x avg, RSI 47.5 |
