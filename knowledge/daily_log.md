@@ -1,61 +1,23 @@
-# Daily Log – 2026-10-08
+# Daily Log – 2026-10-09
 
 
 ## Pre-Market Research
-*17:40 UTC*
+*17:16 UTC*
 
-**Marktstimmung:** Bearish (SPY -0.6%, QQQ -1.5%)
-**Futures:** SPY: -0.6% | QQQ: -1.5%
+**Marktstimmung:** Neutral (SPY +0.5%, QQQ +0.4%)
+**Futures:** SPY: +0.5% | QQQ: +0.4%
 
 **News-Zusammenfassung:**
 **U:**
-  - [marketwatch] How to provide guaranteed retirement income while paying no commissions
-  - [marketwatch] I keep comparing myself to my more financially successful friends. How can I stop?
-  - [marketwatch] Why a longtime skeptic of Palantir’s stock is finally saying it’s time to buy
-**SNAP:**
-  - [seeking_alpha] Roblox set to snap six straight sessions of gains; down more than 2%
+  - [marketwatch] More evidence that broad-market index funds remain unbeatable, even in the era of AI stock-picking
+  - [marketwatch] Elon Musk is now richer than any American ever — and it’s not even close
+  - [marketwatch] Flu season is already here. Here’s what to know about this year’s flu shots.
 
 **Top-Kandidaten:**
 | Symbol | Score | Aktion | Grund |
 |--------|-------|--------|-------|
-| NVDA | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 1.0x avg, RSI 64.3 |
-| AMZN | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 1.0x avg, RSI 58.6 |
-| SPY | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 0.7x avg, RSI 59.7 |
-| QQQ | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 0.6x avg, RSI 68.2 |
-| GOOGL | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 1.0x avg, RSI 55.8 |
-
-## Market Open – Orders
-*19:23 UTC*
-
-Keine Orders platziert.
-
-## Market Close – Tagesabschluss
-*00:14 UTC*
-
-**Portfolio:** 112,114.86€ (+11.84%)
-**Benchmark (URTH/MSCI World):** +nan% | **Alpha heute:** +nan%
-**Cash:** -46,488.95€ (-41.5%)
-**Offene Positionen:** 11
-**Trades heute:** 0/5
-**Unrealisierter P&L:** +13268.92€
-
-**Positionen:**
-  - AAPL: +2078.71€ (+13.9%) | 50 Stk @ 298.86
-  - AMZN: -743.05€ (-5.0%) | 55 Stk @ 268.24
-  - GOOG: -1781.18€ (-12.2%) | 37 Stk @ 393.14
-  - MSFT: +4238.64€ (+29.1%) | 36 Stk @ 404.86
-  - MU: +4928.98€ (+51.4%) | 14 Stk @ 685.58
-  - NVDA: +634.88€ (+4.5%) | 64 Stk @ 221.08
-  - QQQ: +919.80€ (+6.6%) | 20 Stk @ 702.04
-  - SPY: +745.75€ (+5.3%) | 19 Stk @ 735.85
-  - TMC: -3418.65€ (-37.6%) | 1627 Stk @ 5.59
-  - TSLA: -2337.58€ (-15.9%) | 33 Stk @ 445.25
-  - U: +8002.62€ (+73.0%) | 414 Stk @ 26.47
-
-## Nightly Reflection
-*00:46 UTC*
-
-**1 neue Lernerkenntnisse**
-
-**Neue Erkenntnisse:**
-- Reflection error: 404 This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.8-flash for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+| NVDA | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 1.3x avg, RSI 54.6 |
+| AMZN | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 1.2x avg, RSI 50.9 |
+| SPY | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 1.0x avg, RSI 56.0 |
+| QQQ | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 1.3x avg, RSI 58.8 |
+| GOOGL | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 0.8x avg, RSI 53.5 |
