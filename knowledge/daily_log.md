@@ -1,38 +1,23 @@
-# Daily Log – 2026-10-14
+# Daily Log – 2026-10-15
 
 
 ## Pre-Market Research
-*15:40 UTC*
+*15:27 UTC*
 
-**Marktstimmung:** Bearish (SPY -0.8%, QQQ -1.4%)
-**Futures:** SPY: -0.8% | QQQ: -1.4%
+**Marktstimmung:** Neutral (SPY +0.4%, QQQ +0.3%)
+**Futures:** SPY: +0.4% | QQQ: +0.3%
 
 **News-Zusammenfassung:**
 **U:**
-  - [seeking_alpha] Nvidia, ChipAgents launch benchmark to test AI models on chip design: report
-  - [seeking_alpha] YieldMax JP Option Income Strategy ETF announces weekly distribution of $0.0478
-  - [seeking_alpha] BlackRock’s Larry Fink: ‘Fear about data centers is based on misinformation’
-**INTC:**
-  - [seeking_alpha] YieldMax INTC Option Income Strategy ETF announces weekly distribution of $0.4070
+  - [marketwatch] Traders pile into bonds and defensive stocks as the ‘tech wreck’ picks up steam
+  - [marketwatch] Micron, Nvidia and other chip stocks face renewed pressure as AI fears swell
+  - [marketwatch] My wife says we can’t afford to retire. I vetoed her $8,000 trip to Italy. We’re in our 60s and have $4 million. Do I keep working?
 
 **Top-Kandidaten:**
 | Symbol | Score | Aktion | Grund |
 |--------|-------|--------|-------|
-| AMZN | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 0.7x avg, RSI 54.6 |
-| PYPL | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 0.6x avg, RSI 58.7 |
-| AAPL | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.2x avg, RSI 60.5 |
-| MSFT | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.3x avg, RSI 70.7 |
-| NVDA | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.9x avg, RSI 51.9 |
-
-## Market Open – Orders
-*18:08 UTC*
-
-Keine Orders platziert.
-
-## Nightly Reflection
-*23:31 UTC*
-
-**1 neue Lernerkenntnisse**
-
-**Neue Erkenntnisse:**
-- Reflection error: 404 This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.8-flash for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+| AMZN | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 1.0x avg, RSI 49.5 |
+| PYPL | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 1.3x avg, RSI 58.5 |
+| AAPL | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.7x avg, RSI 62.1 |
+| MSFT | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.1x avg, RSI 62.7 |
+| TSLA | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.0x avg, RSI 49.4 |
