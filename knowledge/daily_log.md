@@ -1,36 +1,26 @@
-# Daily Log – 2026-10-20
+# Daily Log – 2026-10-21
 
 
 ## Pre-Market Research
-*15:31 UTC*
+*15:48 UTC*
 
-**Marktstimmung:** Neutral (SPY +0.2%, QQQ -0.1%)
-**Futures:** SPY: +0.2% | QQQ: -0.1%
+**Marktstimmung:** Neutral (SPY +0.2%, QQQ +0.5%)
+**Futures:** SPY: +0.2% | QQQ: +0.5%
 
 **News-Zusammenfassung:**
 **U:**
-  - [marketwatch] Salesforce’s stock falls as investors chafe at the cost of latest AI purchase
-  - [marketwatch] Elon Musk promised a SpaceX share to every kid in America — don’t hold your breath
-  - [marketwatch] Pending home sales sink to 25-year low as buyers flee high mortgage rates
+  - [marketwatch] AI stocks are probably in a bubble — but might be worth holding on to, says Citadel’s Ken Griffin
+  - [marketwatch] My partner of 17 years left me his $1 million home. His children say I influenced him to do so. Should I share my inheritance?
+  - [marketwatch] Moderna is about to release the trial results for its cancer vaccine. A lot is riding on this data.
+**META:**
+  - [marketwatch] Meta’s AI spending spree has investors taking a page from the financial-crisis playbook
+  - [seeking_alpha] Meta’s Muse retention outpaces ChatGPT, Claude
 
 **Top-Kandidaten:**
 | Symbol | Score | Aktion | Grund |
 |--------|-------|--------|-------|
-| AMZN | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 1.5x avg, RSI 57.4 |
-| PYPL | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 0.9x avg, RSI 58.5 |
-| SNAP | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 0.8x avg, RSI 58.9 |
-| AAPL | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.8x avg, RSI 61.3 |
-| MSFT | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.7x avg, RSI 59.7 |
-
-## Market Open – Orders
-*18:05 UTC*
-
-Keine Orders platziert.
-
-## Nightly Reflection
-*23:31 UTC*
-
-**1 neue Lernerkenntnisse**
-
-**Neue Erkenntnisse:**
-- Reflection error: 404 This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.8-flash for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+| AMZN | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 1.4x avg, RSI 57.6 |
+| CRM | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 0.9x avg, RSI 57.1 |
+| PYPL | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 0.9x avg, RSI 61.6 |
+| SNAP | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 1.7x avg, RSI 60.8 |
+| AAPL | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.7x avg, RSI 55.8 |
