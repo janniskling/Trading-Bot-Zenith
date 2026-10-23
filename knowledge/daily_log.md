@@ -21,3 +21,8 @@
 | PYPL | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 0.6x avg, RSI 63.5 |
 | SNAP | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 2.0x avg, RSI 59.6 |
 | AAPL | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.9x avg, RSI 64.9 |
+
+## Market Open – Orders
+*17:56 UTC*
+
+Keine Orders platziert.
