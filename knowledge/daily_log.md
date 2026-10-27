@@ -21,3 +21,8 @@
 | TSLA | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.7x avg, RSI 60.1 |
 | CRM | 80/100 | watch_for_entry | EMA bullish crossover, Above EMA50, RSI 59.7 |
 | SNAP | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 2.0x avg, RSI 59.8 |
+
+## Market Open – Orders
+*18:52 UTC*
+
+Keine Orders platziert.
