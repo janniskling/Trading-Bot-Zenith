@@ -1,36 +1,25 @@
-# Daily Log – 2026-10-27
+# Daily Log – 2026-10-28
 
 
 ## Pre-Market Research
-*16:09 UTC*
+*16:56 UTC*
 
-**Marktstimmung:** Bullish (SPY +0.5%, QQQ +1.1%)
-**Futures:** SPY: +0.5% | QQQ: +1.1%
+**Marktstimmung:** Neutral (SPY +0.2%, QQQ +0.1%)
+**Futures:** SPY: +0.2% | QQQ: +0.1%
 
 **News-Zusammenfassung:**
 **U:**
-  - [marketwatch] The U.S. economy is gathering steam. This is the chief reason why.
-  - [marketwatch] We stopped helping our neighbors with free home repairs and our friendship cooled. Who’s to blame?
-  - [marketwatch] McDonald’s new bet on chicken hits a snag as franchisees say the birds are too big
+  - [marketwatch] Healthcare stocks are on their biggest hot streak in a generation. Think twice before chasing the rally.
+  - [marketwatch] Trump administration clears the way for production of peptides like BPC-157 and TB-500
+  - [marketwatch] Bullish on Anthropic but don’t want to wait until the IPO? Here’s how you can invest today.
+**SOFI:**
+  - [seeking_alpha] GE HealthCare forecasts 2026 adjusted EPS $4.95-$5.05 while advancing SOFIE Biosciences acquisition
 
 **Top-Kandidaten:**
 | Symbol | Score | Aktion | Grund |
 |--------|-------|--------|-------|
-| AAPL | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.8x avg, RSI 57.7 |
-| MSFT | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.0x avg, RSI 57.3 |
-| TSLA | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.7x avg, RSI 60.1 |
-| CRM | 80/100 | watch_for_entry | EMA bullish crossover, Above EMA50, RSI 59.7 |
-| SNAP | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 2.0x avg, RSI 59.8 |
-
-## Market Open – Orders
-*18:52 UTC*
-
-Keine Orders platziert.
-
-## Nightly Reflection
-*00:07 UTC*
-
-**1 neue Lernerkenntnisse**
-
-**Neue Erkenntnisse:**
-- Reflection error: 404 This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.8-flash for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+| CRM | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 1.1x avg, RSI 52.5 |
+| PYPL | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 2.1x avg, RSI 52.4 |
+| AAPL | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.0x avg, RSI 61.0 |
+| MSFT | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.8x avg, RSI 56.6 |
+| TSLA | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.3x avg, RSI 65.5 |
