@@ -23,3 +23,8 @@
 | IWM | 75/100 | watch_for_entry | EMA bullish crossover, Volume 0.8x avg, RSI 50.3 |
 | MSFT | 65/100 | watch_for_entry | Above EMA50, Volume 1.1x avg, RSI 49.2 |
 | TSLA | 60/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, RSI 58.8 |
+
+## Market Open – Orders
+*20:30 UTC*
+
+Keine Orders platziert.
