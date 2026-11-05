@@ -28,3 +28,26 @@
 *20:30 UTC*
 
 Keine Orders platziert.
+
+## Market Close – Tagesabschluss
+*00:49 UTC*
+
+**Portfolio:** 102,523.76€ (+3.59%)
+**Benchmark (URTH/MSCI World):** +1.76% | **Alpha heute:** +1.83%
+**Cash:** -46,486.85€ (-45.3%)
+**Offene Positionen:** 11
+**Trades heute:** 0/5
+**Unrealisierter P&L:** +3675.72€
+
+**Positionen:**
+  - AAPL: +2613.71€ (+17.5%) | 50 Stk @ 298.86
+  - AMZN: -131.45€ (-0.9%) | 55 Stk @ 268.24
+  - GOOG: -3810.63€ (-26.2%) | 37 Stk @ 393.14
+  - MSFT: +5369.04€ (+36.8%) | 36 Stk @ 404.86
+  - MU: +1327.48€ (+13.8%) | 14 Stk @ 685.58
+  - NVDA: -1309.91€ (-9.3%) | 64 Stk @ 221.08
+  - QQQ: -222.80€ (-1.6%) | 20 Stk @ 702.04
+  - SPY: +600.46€ (+4.3%) | 19 Stk @ 735.85
+  - TMC: -5338.51€ (-58.7%) | 1627 Stk @ 5.59
+  - TSLA: -2054.11€ (-14.0%) | 33 Stk @ 445.25
+  - U: +6632.45€ (+60.5%) | 414 Stk @ 26.47
