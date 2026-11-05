@@ -23,3 +23,8 @@
 | AAPL | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.9x avg, RSI 57.7 |
 | MSFT | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 2.7x avg, RSI 64.3 |
 | TSLA | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.5x avg, RSI 51.4 |
+
+## Market Open – Marktfilter
+*20:47 UTC*
+
+🚫 SPY unter EMA-200 — Bärenmarkt erkannt, kein Trading heute
