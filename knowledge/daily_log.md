@@ -23,3 +23,8 @@
 | AMZN | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 2.1x avg, RSI 55.2 |
 | PYPL | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.8x avg, RSI 60.5 |
 | U | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 3.2x avg, RSI 68.2 |
+
+## Market Open – Marktfilter
+*20:03 UTC*
+
+🚫 SPY unter EMA-200 — Bärenmarkt erkannt, kein Trading heute
