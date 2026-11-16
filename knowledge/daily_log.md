@@ -1,36 +1,25 @@
-# Daily Log – 2026-11-13
+# Daily Log – 2026-11-16
 
 
 ## Pre-Market Research
-*18:19 UTC*
+*20:46 UTC*
 
-**Marktstimmung:** Bearish (SPY -1.1%, QQQ -2.2%)
-**Futures:** SPY: -1.1% | QQQ: -2.2%
+**Marktstimmung:** Bearish (SPY -1.4%, QQQ -1.9%)
+**Futures:** SPY: -1.4% | QQQ: -1.9%
 
 **News-Zusammenfassung:**
 **U:**
-  - [marketwatch] I am turning 18 next month and want to start investing. What do I do first?
-  - [marketwatch] Should a widow leave her late partner’s home to her stepkids — or cut off contact with them?
-  - [marketwatch] If you could change one thing about caregiving, what would it be?
+  - [marketwatch] The FDA declined to approve one of biotech’s most closely watched cancer drugs. The company’s stock tumbled.
+  - [marketwatch] SpaceX is about to attempt the ‘holy grail’ of rocketry
+  - [marketwatch] Jensen Huang’s fans want him back as Nvidia CEO. This is why that’s unlikely.
+**AMD:**
+  - [marketwatch] Micron, AMD and other AI stocks fall as the chip sector’s selloff intensifies
 
 **Top-Kandidaten:**
 | Symbol | Score | Aktion | Grund |
 |--------|-------|--------|-------|
-| U | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 1.0x avg, RSI 66.6 |
-| AAPL | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.9x avg, RSI 59.6 |
-| MSFT | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.8x avg, RSI 48.4 |
-| TSLA | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.8x avg, RSI 56.5 |
-| AMZN | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.9x avg, RSI 58.2 |
-
-## Market Open – Orders
-*20:37 UTC*
-
-Keine Orders platziert.
-
-## Nightly Reflection
-*01:06 UTC*
-
-**1 neue Lernerkenntnisse**
-
-**Neue Erkenntnisse:**
-- Reflection error: 404 This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.8-flash for the latest features and improvements. We recommend you to use the Interactions API (https://aistudio.google.com/docs/get-started).
+| U | 100/100 | watch_for_entry | EMA bullish crossover, Above EMA50, Volume 1.0x avg, RSI 71.0 |
+| AAPL | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.9x avg, RSI 60.6 |
+| MSFT | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.8x avg, RSI 49.0 |
+| TSLA | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 1.0x avg, RSI 53.6 |
+| PYPL | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.6x avg, RSI 57.7 |
