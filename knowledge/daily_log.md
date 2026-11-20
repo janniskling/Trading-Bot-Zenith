@@ -21,3 +21,26 @@
 | AAPL | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.7x avg, RSI 56.3 |
 | PYPL | 80/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, Volume 0.8x avg, RSI 50.7 |
 | TSLA | 60/100 | watch_for_entry | EMA9 > EMA21 (no fresh cross), Above EMA50, RSI 51.1 |
+
+## Market Close – Tagesabschluss
+*01:44 UTC*
+
+**Portfolio:** 91,972.48€ (-7.49%)
+**Benchmark (URTH/MSCI World):** +nan% | **Alpha heute:** +nan%
+**Cash:** -46,473.35€ (-50.5%)
+**Offene Positionen:** 11
+**Trades heute:** 0/5
+**Unrealisierter P&L:** -6889.06€
+
+**Positionen:**
+  - AAPL: +2607.21€ (+17.4%) | 50 Stk @ 298.86
+  - AMZN: -683.65€ (-4.6%) | 55 Stk @ 268.24
+  - GOOG: -4519.18€ (-31.1%) | 37 Stk @ 393.14
+  - MSFT: +3264.12€ (+22.4%) | 36 Stk @ 404.86
+  - MU: -203.70€ (-2.1%) | 14 Stk @ 685.58
+  - NVDA: -4895.36€ (-34.6%) | 64 Stk @ 221.08
+  - QQQ: -1221.60€ (-8.7%) | 20 Stk @ 702.04
+  - SPY: -411.54€ (-2.9%) | 19 Stk @ 735.85
+  - TMC: -6428.60€ (-70.7%) | 1627 Stk @ 5.59
+  - TSLA: -2511.16€ (-17.1%) | 33 Stk @ 445.25
+  - U: +8114.40€ (+74.0%) | 414 Stk @ 26.47
