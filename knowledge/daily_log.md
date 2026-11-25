@@ -21,3 +21,9 @@
 | TSLA | 65/100 | watch_for_entry | Above EMA50, Volume 1.4x avg, RSI 52.1 |
 | MSFT | 40/100 | watch_for_entry | Volume 1.1x avg, RSI 39.2 |
 | NVDA | 40/100 | watch_for_entry | Volume 2.0x avg, RSI 42.9 |
+
+## Midday Check
+*00:58 UTC*
+
+Positionen geprüft: 11
+Aktionen: 0
