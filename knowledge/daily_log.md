@@ -35,3 +35,26 @@
 
 Positionen geprüft: 11
 Aktionen: 0
+
+## Market Close – Tagesabschluss
+*02:44 UTC*
+
+**Portfolio:** 95,215.13€ (-3.83%)
+**Benchmark (URTH/MSCI World):** -0.01% | **Alpha heute:** -3.82%
+**Cash:** -46,473.35€ (-48.8%)
+**Offene Positionen:** 11
+**Trades heute:** 0/5
+**Unrealisierter P&L:** -3646.41€
+
+**Positionen:**
+  - AAPL: +2957.21€ (+19.8%) | 50 Stk @ 298.86
+  - AMZN: -1009.25€ (-6.8%) | 55 Stk @ 268.24
+  - GOOG: -4299.03€ (-29.6%) | 37 Stk @ 393.14
+  - MSFT: +3353.04€ (+23.0%) | 36 Stk @ 404.86
+  - MU: -749.42€ (-7.8%) | 14 Stk @ 685.58
+  - NVDA: -4293.12€ (-30.3%) | 64 Stk @ 221.08
+  - QQQ: -1094.60€ (-7.8%) | 20 Stk @ 702.04
+  - SPY: -174.61€ (-1.2%) | 19 Stk @ 735.85
+  - TMC: -5956.77€ (-65.5%) | 1627 Stk @ 5.59
+  - TSLA: -1889.44€ (-12.9%) | 33 Stk @ 445.25
+  - U: +9509.58€ (+86.8%) | 414 Stk @ 26.47
